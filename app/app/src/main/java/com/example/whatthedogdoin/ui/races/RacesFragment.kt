@@ -1,4 +1,4 @@
-package com.example.whatthedogdoin.ui.notifications
+package com.example.whatthedogdoin.ui.races
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.whatthedogdoin.R
-import com.example.whatthedogdoin.databinding.FragmentNotificationsBinding
+import com.example.whatthedogdoin.databinding.FragmentRacesBinding
 
-class NotificationsFragment : Fragment() {
+class RacesFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private lateinit var racesViewModel: RacesViewModel
+    private var _binding: FragmentRacesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,14 +24,14 @@ class NotificationsFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-                ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        racesViewModel =
+                ViewModelProvider(this).get(RacesViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentRacesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        racesViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
