@@ -30,7 +30,7 @@ class RacesFragment : Fragment() {
         _binding = FragmentRacesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.textRaces
         racesViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
