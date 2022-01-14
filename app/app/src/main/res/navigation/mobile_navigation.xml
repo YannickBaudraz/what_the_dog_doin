@@ -24,9 +24,9 @@
         tools:layout="@layout/fragment_races" />
     <fragment
         android:id="@+id/navigation_diseases"
-        android:name="com.example.whatthedogdoin.ui.races.RacesFragment"
+        android:name="com.example.whatthedogdoin.ui.diseases.DiseasesFragment"
         android:label="@string/diseases"
-        tools:layout="@layout/fragment_races" />
+        tools:layout="@layout/fragment_diseases" />
     <fragment
         android:id="@+id/navigation_clients"
         android:name="com.example.whatthedogdoin.ui.races.RacesFragment"
