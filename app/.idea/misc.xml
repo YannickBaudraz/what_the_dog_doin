@@ -18,6 +18,11 @@
         <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_clients.xml" value="0.13980509745127437" />
         <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_diseases.xml" value="0.29846014492753625" />
         <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_dogs.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30570652173913043" />
+        <entry key="app/src/main/res/layout/fragment_breeds.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/layout/fragment_dogs.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/layout/fragment_races.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2635416666666667" />
       </map>
     </option>
   </component>

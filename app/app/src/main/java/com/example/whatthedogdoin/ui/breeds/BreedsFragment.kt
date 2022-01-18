@@ -1,4 +1,4 @@
-package com.example.whatthedogdoin.ui.races
+package com.example.whatthedogdoin.ui.breeds
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.whatthedogdoin.databinding.FragmentRacesBinding
+import com.example.whatthedogdoin.databinding.FragmentBreedsBinding
 
-class RacesFragment : Fragment() {
+class BreedsFragment : Fragment() {
 
-    private lateinit var racesViewModel: RacesViewModel
-    private var _binding: FragmentRacesBinding? = null
+    private lateinit var breedsViewModel: BreedsViewModel
+    private var _binding: FragmentBreedsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,14 +24,14 @@ class RacesFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        racesViewModel =
-                ViewModelProvider(this).get(RacesViewModel::class.java)
+        breedsViewModel =
+                ViewModelProvider(this).get(BreedsViewModel::class.java)
 
-        _binding = FragmentRacesBinding.inflate(inflater, container, false)
+        _binding = FragmentBreedsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textRaces
-        racesViewModel.text.observe(viewLifecycleOwner, Observer {
+        breedsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

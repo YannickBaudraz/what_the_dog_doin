@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">What the dog doin</string>
     <string name="dogs">Chiens</string>
-    <string name="races">Races</string>
+    <string name="breeds">Races</string>
     <string name="home">Accueil</string>
     <string name="diseases">Maladies</string>
     <string name="clients">Clients</string>

@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_dogs" />
 
     <fragment
-        android:id="@+id/navigation_races"
-        android:name="com.example.whatthedogdoin.ui.races.RacesFragment"
-        android:label="@string/races"
-        tools:layout="@layout/fragment_races" />
+        android:id="@+id/navigation_breeds"
+        android:name="com.example.whatthedogdoin.ui.breeds.BreedsFragment"
+        android:label="@string/breeds"
+        tools:layout="@layout/fragment_breeds" />
     <fragment
         android:id="@+id/navigation_diseases"
         android:name="com.example.whatthedogdoin.ui.diseases.DiseasesFragment"
@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_diseases" />
     <fragment
         android:id="@+id/navigation_clients"
-        android:name="com.example.whatthedogdoin.ui.races.RacesFragment"
+        android:name="com.example.whatthedogdoin.ui.breeds.BreedsFragment"
         android:label="@string/clients"
-        tools:layout="@layout/fragment_races" />
+        tools:layout="@layout/fragment_breeds" />
 </navigation>
