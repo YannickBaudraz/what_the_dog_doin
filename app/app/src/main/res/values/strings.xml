@@ -5,4 +5,11 @@
     <string name="home">Accueil</string>
     <string name="diseases">Maladies</string>
     <string name="clients">Clients</string>
+
+    <string-array name="breeds_sort">
+        <item>Nom</item>
+        <item>Catégorie</item>
+        <item>Morphologie</item>
+        <item>Taille moyenne</item>
+    </string-array>
 </resources>
