@@ -32,4 +32,5 @@
         android:name="com.example.whatthedogdoin.ui.clients.ClientsFragment"
         android:label="@string/clients"
         tools:layout="@layout/fragment_clients" />
+
 </navigation>
