@@ -3,6 +3,7 @@ package com.example.whatthedogdoin
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -28,5 +29,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dogs, R.id.navigation_breeds,R.id.navigation_diseases))
         setupActionBarWithNavController(navController, appBarConfiguration) // */
         navView.setupWithNavController(navController)
+
+        // Set dark mode as default
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
     }
 }
