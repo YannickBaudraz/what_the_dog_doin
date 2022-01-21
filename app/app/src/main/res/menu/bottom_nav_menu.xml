@@ -21,7 +21,7 @@
         android:title="@string/diseases" />
     <item
         android:id="@+id/navigation_clients"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_baseline_group_24"
         android:title="@string/clients" />
 
 </menu>
