@@ -17,7 +17,7 @@
         android:title="@string/home" />
     <item
         android:id="@+id/navigation_diseases"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_baseline_healing_24"
         android:title="@string/diseases" />
     <item
         android:id="@+id/navigation_clients"
