@@ -5,25 +5,22 @@
       <map>
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3828125" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/dropdown_item.xml" value="0.2755208333333333" />
+        <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_breeds.xml" value="0.35104166666666664" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_clients.xml" value="0.36666666666666664" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_dashboard.xml" value="0.3088768115942029" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_diseases.xml" value="0.36666666666666664" />
-        <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_dogs.xml" value="0.36666666666666664" />
+        <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_dog_detail.xml" value="0.9" />
+        <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_dogs.xml" value="0.33" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_home.xml" value="0.3088768115942029" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Data/Dev/what_the_dog_doin/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/activity_main.xml" value="0.29571106094808125" />
+        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/activity_main.xml" value="0.13980509745127437" />
         <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/client_fragment.xml" value="0.30390625" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/dropdown_item.xml" value="0.3140625" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_breeds.xml" value="0.3140625" />
         <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_clients.xml" value="0.13980509745127437" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_diseases.xml" value="0.15" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_dogs.xml" value="0.22" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_home.xml" value="0.3296875" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.16484375" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.176953125" />
-        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.176953125" />
+        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_diseases.xml" value="0.29846014492753625" />
+        <entry key="..\:/gui2/what_the_dog_doin/app/app/src/main/res/layout/fragment_dogs.xml" value="0.1" />
       </map>
     </option>
   </component>
