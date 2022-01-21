@@ -24,7 +24,7 @@ class BreedsFragment : Fragment() {
 
         val orderBy = resources.getStringArray(R.array.breeds_sort);
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, orderBy);
-        binding.autoCompleteTextView.setAdapter(arrayAdapter);
+        binding.spnOrderBy.setAdapter(arrayAdapter);
     }
 
     override fun onCreateView(
