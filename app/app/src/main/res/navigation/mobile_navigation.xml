@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_diseases" />
     <fragment
         android:id="@+id/navigation_clients"
-        android:name="com.example.whatthedogdoin.ui.breeds.BreedsFragment"
+        android:name="com.example.whatthedogdoin.ui.clients.ClientsFragment"
         android:label="@string/clients"
-        tools:layout="@layout/fragment_breeds" />
+        tools:layout="@layout/fragment_clients" />
 </navigation>
