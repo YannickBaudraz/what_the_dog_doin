@@ -5,6 +5,7 @@
     <string name="home">Accueil</string>
     <string name="diseases">Maladies</string>
     <string name="clients">Clients</string>
+    <string name="categories">Categories</string>
 
     <string-array name="breeds_sort">
         <item>Nom</item>
