@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dogs.DogUpdateFragment">
+    tools:context=".ui.dogs.DogAddFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,12 +30,11 @@
             android:layout_height="@dimen/width_form_picture"
             android:layout_marginTop="32dp"
             android:adjustViewBounds="false"
-            android:contentDescription="@null"
             android:cropToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:src="@mipmap/ic_border_colie" />
+            tools:src="@drawable/ic_baseline_add_photo_alternate_24" />
 
         <ImageButton
             android:id="@+id/imageButtonDelete"
@@ -53,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Modification"
+            android:text="Ajout d'un chien"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,10 +62,9 @@
             android:id="@+id/buttonUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/register"
+            android:text="Créer"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -88,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Laïka"
+                android:hint="Nom"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
@@ -97,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="20/01/2019"
+                android:hint="Date de naissance"
                 android:inputType="date"
                 android:minHeight="48dp" />
 
@@ -116,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:hint="Border colie"
+                    android:hint="@string/breeds"
                     android:inputType="none"
                     android:padding="0dp"
                     android:textSize="12dp" />
@@ -138,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:hint="Marcel Pellerin"
+                    android:hint="@string/master"
                     android:inputType="none"
                     android:padding="0dp"
                     android:textSize="12dp" />
@@ -150,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="49 cm"
+                android:hint="Taille (cm)"
                 android:inputType="text"
                 android:minHeight="48dp" />
 

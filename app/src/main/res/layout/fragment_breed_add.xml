@@ -55,7 +55,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
             tools:src="@mipmap/ic_husky" />
 
         <EditText
-            android:id="@+id/editTextExtraInfo"
+            android:id="@+id/textExtraInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_between_form_items"
@@ -107,7 +107,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
         </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
-            android:id="@+id/editTextSize"
+            android:id="@+id/textSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_between_form_items"
