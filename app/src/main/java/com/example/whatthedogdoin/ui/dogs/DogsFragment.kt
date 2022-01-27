@@ -29,11 +29,6 @@ class DogsFragment : Fragment() {
 
         _binding = FragmentDogsBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textDogs
-        dogsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 
