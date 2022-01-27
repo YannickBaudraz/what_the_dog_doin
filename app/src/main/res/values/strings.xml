@@ -6,7 +6,8 @@
     <string name="diseases">Maladies</string>
     <string name="clients">Clients</string>
     <string name="categories">Categories</string>
-
+    <string name="register">Enregistrer</string>
+    <string name="master">Maître</string>
     <string-array name="breeds_sort">
         <item>Nom</item>
         <item>Catégorie</item>

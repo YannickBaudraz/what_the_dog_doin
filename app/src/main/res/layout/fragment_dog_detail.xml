@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DogDetailFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".ui.dogs.DogDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,6 +16,7 @@
             android:id="@+id/imageButtonBack"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="Bouton de retour"
             android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +25,8 @@
             android:id="@+id/imageButtonDelete"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_delete_24"
+            android:contentDescription=" "
+            android:src="@drawable/ic_baseline_edit_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,6 @@
             android:id="@+id/textViewNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:text="Note"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,20 +53,20 @@
 
         <TextView
             android:id="@+id/textViewNoteValue"
-            android:layout_width="226dp"
+            android:layout_width="0dp"
             android:layout_height="112dp"
+            android:layout_marginStart="91dp"
             android:layout_marginTop="24dp"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscimg elit. Morbi accumsan vitae mi ac luctus"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.836"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textViewNote"
             app:layout_constraintTop_toBottomOf="@+id/textViewDiseasesValue" />
 
         <TextView
             android:id="@+id/textViewMaster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="244dp"
             android:text="Maître"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,18 +76,17 @@
             android:id="@+id/textViewMasterValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="244dp"
             android:text="John Doe"
             app:layout_constraintStart_toEndOf="@+id/textViewMaster"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:text="Race"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewMaster" />
@@ -97,7 +95,6 @@
             android:id="@+id/textViewAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:text="Age"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,37 +104,36 @@
             android:id="@+id/textViewAgeValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
+            android:layout_marginStart="96dp"
             android:layout_marginTop="24dp"
             android:text="3 ans"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewAge"
             app:layout_constraintTop_toBottomOf="@+id/textViewBreedValue" />
 
         <TextView
             android:id="@+id/textViewBreedValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="24dp"
             android:text="Muttnik"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewBreed"
             app:layout_constraintTop_toBottomOf="@+id/textViewMasterValue" />
 
         <TextView
             android:id="@+id/textViewDiseasesValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
+            android:layout_marginStart="64dp"
             android:layout_marginTop="24dp"
             android:text="Arthrose, Arthrite"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewDiseases"
             app:layout_constraintTop_toBottomOf="@+id/textViewAgeValue" />
 
         <TextView
             android:id="@+id/textViewDiseases"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:text="Maladies"
             app:layout_constraintStart_toStartOf="parent"
