@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/navigation_dogs"
         android:icon="@drawable/ic_baseline_pets_24"
@@ -11,10 +13,6 @@
         android:title="@string/breeds" />
 
     <item
-        android:id="@+id/placeholder"
-        android:title="" />
-
-    <item
         android:id="@+id/navigation_diseases"
         android:icon="@drawable/ic_baseline_healing_24"
         android:title="@string/diseases" />
@@ -22,4 +20,5 @@
         android:id="@+id/navigation_clients"
         android:icon="@drawable/ic_baseline_group_24"
         android:title="@string/clients" />
+
 </menu>
