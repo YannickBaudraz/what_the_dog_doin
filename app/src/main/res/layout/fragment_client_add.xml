@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewTitleClientAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Nouveau client"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleClientAdd">
+
+        <TextView
+            android:id="@+id/textViewSectionTitleInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:text="Informations"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+        <EditText
+            android:id="@+id/editTextFirstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:ems="10"
+            android:hint="Prénom"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextLastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:ems="10"
+            android:hint="Nom"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:ems="10"
+            android:hint="Téléphone"
+            android:inputType="phone"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/textViewSectionTitleNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_form_items"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:text="Note"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+        <EditText
+            android:id="@+id/editTextNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Note"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/textViewSectionTitleDogs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_form_items"
+            android:layout_marginBottom="@dimen/margin_between_form_items"
+            android:text="Chiens"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+        <Button
+            android:id="@+id/button12"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ajouter un chien" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_margin_form_last_button"
+            android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
+            android:text="Créer le client" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
