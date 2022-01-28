@@ -25,44 +25,70 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/ConstraintLayout2"
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                app:columnCount="3"
+                app:flow_horizontalGap="15dp"
+                app:useDefaultMargins="true">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:text="Button"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/textDiseases"
-                    android:layout_width="0dp"
+                    android:id="@+id/textAddSickness"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Maladies"
+                    android:text="Race"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/iconAdd"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:src="@android:drawable/ic_menu_add"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    app:layout_column="2"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/iconSearch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:src="@android:drawable/ic_menu_search"
-                    app:layout_constraintEnd_toEndOf="@+id/textDiseases"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    <ImageButton
+                        android:id="@+id/imageButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@android:drawable/ic_input_add"
+                        android:text="Button"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </RelativeLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.gridlayout.widget.GridLayout>
 
             <Button
                 android:id="@+id/buttonDisease1"

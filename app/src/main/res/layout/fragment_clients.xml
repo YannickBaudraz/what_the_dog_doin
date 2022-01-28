@@ -37,28 +37,28 @@
             android:id="@+id/button16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="Yannick Baudraz"
             app:cornerRadius="0dp" />
 
         <Button
             android:id="@+id/button17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="Mauro Santos"
             app:cornerRadius="0dp" />
 
         <Button
             android:id="@+id/button18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="Armand Marechal"
             app:cornerRadius="0dp" />
 
         <Button
             android:id="@+id/button19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="Mario Rocha"
             app:cornerRadius="0dp" />
 
         <Button

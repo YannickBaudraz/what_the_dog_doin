@@ -42,7 +42,7 @@ tools:context=".ui.breeds.update.BreedUpdateFragment">
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/text_breed_update"
+            android:id="@+id/textAddSickness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Race"
