@@ -35,7 +35,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/iconDiseases"
+                        android:id="@+id/textDiseaseName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="Anémie du chien"
@@ -47,7 +47,7 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton6"
+                        android:id="@+id/iconBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -58,7 +58,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton7"
+                        android:id="@+id/iconDelete"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -90,45 +90,45 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/iconDiseases2"
+                        android:id="@+id/iconVaccine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="💉"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/iconDiseases8"
+                        app:layout_constraintEnd_toStartOf="@+id/spaceBetweenIcons"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="1.0" />
 
                     <TextView
-                        android:id="@+id/iconDiseases4"
+                        android:id="@+id/iconTick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="✔"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/iconDiseases2"
-                        app:layout_constraintEnd_toEndOf="@+id/iconDiseases2"
+                        app:layout_constraintBottom_toBottomOf="@+id/iconVaccine"
+                        app:layout_constraintEnd_toEndOf="@+id/iconVaccine"
                         app:layout_constraintHorizontal_bias="0.588"
-                        app:layout_constraintStart_toStartOf="@+id/iconDiseases2"
-                        app:layout_constraintTop_toTopOf="@+id/iconDiseases2" />
+                        app:layout_constraintStart_toStartOf="@+id/iconVaccine"
+                        app:layout_constraintTop_toTopOf="@+id/iconVaccine" />
 
                     <TextView
-                        android:id="@+id/iconDiseases6"
+                        android:id="@+id/iconZoonose"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="🙍"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/iconDiseases8"
+                        app:layout_constraintStart_toEndOf="@+id/spaceBetweenIcons"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/iconDiseases7"
+                        android:id="@+id/iconCross"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -139,13 +139,13 @@
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/iconDiseases6"
-                        app:layout_constraintEnd_toEndOf="@+id/iconDiseases6"
-                        app:layout_constraintStart_toStartOf="@+id/iconDiseases6"
-                        app:layout_constraintTop_toTopOf="@+id/iconDiseases6" />
+                        app:layout_constraintBottom_toBottomOf="@+id/iconZoonose"
+                        app:layout_constraintEnd_toEndOf="@+id/iconZoonose"
+                        app:layout_constraintStart_toStartOf="@+id/iconZoonose"
+                        app:layout_constraintTop_toTopOf="@+id/iconZoonose" />
 
                     <TextView
-                        android:id="@+id/iconDiseases8"
+                        android:id="@+id/spaceBetweenIcons"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="      "
@@ -188,24 +188,24 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <AutoCompleteTextView
-                            android:id="@+id/spnOrderBy1"
+                            android:id="@+id/buttonDescription"
                             android:layout_width="match_parent"
                             android:layout_height="59dp"
                             android:layout_margin="0dp"
-                            android:hint="Catégorie"
                             android:inputType="none"
                             android:padding="0dp"
-                            android:textAlignment="center"
-                            android:textSize="30dp" />
+                            android:textSize="30dp"
+                            tools:text="Description" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/textCategorie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
+                        android:textAlignment="viewStart"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -221,7 +221,7 @@
                     android:layout_height="match_parent">
 
                     <AutoCompleteTextView
-                        android:id="@+id/spnOrderBy2"
+                        android:id="@+id/buttonSymptomes"
                         android:layout_width="match_parent"
                         android:layout_height="59dp"
                         android:layout_margin="0dp"
@@ -239,7 +239,7 @@
                     android:layout_height="match_parent">
 
                     <AutoCompleteTextView
-                        android:id="@+id/spnOrderBy3"
+                        android:id="@+id/buttonPreventions"
                         android:layout_width="match_parent"
                         android:layout_height="59dp"
                         android:layout_margin="0dp"
@@ -257,7 +257,7 @@
                     android:layout_height="match_parent">
 
                     <AutoCompleteTextView
-                        android:id="@+id/spnOrderBy"
+                        android:id="@+id/buttonTraitements"
                         android:layout_width="match_parent"
                         android:layout_height="59dp"
                         android:layout_margin="0dp"
