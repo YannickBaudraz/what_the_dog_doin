@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.diseases.DiseasesFragment">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ConstraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/iconDiseases"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Anémie du chien"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:src="?attr/actionModeCloseDrawable"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButton7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:src="@android:drawable/ic_menu_delete"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/iconDiseases9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="      "
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/iconDiseases2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💉"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iconDiseases8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/iconDiseases4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✔"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textSize="30sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iconDiseases2"
+                        app:layout_constraintEnd_toEndOf="@+id/iconDiseases2"
+                        app:layout_constraintHorizontal_bias="0.588"
+                        app:layout_constraintStart_toStartOf="@+id/iconDiseases2"
+                        app:layout_constraintTop_toTopOf="@+id/iconDiseases2" />
+
+                    <TextView
+                        android:id="@+id/iconDiseases6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🙍"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iconDiseases8"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/iconDiseases7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="9dp"
+                        android:text="❌"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iconDiseases6"
+                        app:layout_constraintEnd_toEndOf="@+id/iconDiseases6"
+                        app:layout_constraintStart_toStartOf="@+id/iconDiseases6"
+                        app:layout_constraintTop_toTopOf="@+id/iconDiseases6" />
+
+                    <TextView
+                        android:id="@+id/iconDiseases8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="      "
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/iconDiseases10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="      "
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spnOrderBy1"
+                            android:layout_width="match_parent"
+                            android:layout_height="59dp"
+                            android:layout_margin="0dp"
+                            android:hint="Catégorie"
+                            android:inputType="none"
+                            android:padding="0dp"
+                            android:textAlignment="center"
+                            android:textSize="30dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout1"
+                        tools:text="L’anémie chez le chien est une pathologie due à la baisse du taux sanguin d’hémoglobine.  Cette insuffisance de globule rouge entraine une mauvaise libération de l’oxygène dans l’organisme.  On distingue 2 types d’anémie :  L’anémie non régénérative consécutive à une baisse de production d’hémoglobine, provoquée soit par une affection de la moelle osseuse, une affection systémique (insuffisance rénale, insuffisance immunitaire, problème de thyroïde …etc.) ou encore un déficit en fer, protéines ou vitamine B12. L’anémie régénérative due à une destruction des globules rouges et provoquée par soit une hémorragie, une infestation de parasites, un ulcère de l’intestin, une inflammation du système immunitaire, une tumeur sanglante d’un organe, une intervention chirurgicale, un traumatisme ou une ingestion de produit toxique.  Très important : En cas de moindre doute, allez consulter votre vétérinaire rapidement." />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spnOrderBy2"
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:layout_margin="0dp"
+                        android:hint="Symptômes"
+                        android:inputType="none"
+                        android:padding="0dp"
+                        android:textSize="30dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout3"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spnOrderBy3"
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:layout_margin="0dp"
+                        android:hint="Préventions"
+                        android:inputType="none"
+                        android:padding="0dp"
+                        android:textSize="30dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spnOrderBy"
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:layout_margin="0dp"
+                        android:hint="Traitements"
+                        android:inputType="none"
+                        android:padding="0dp"
+                        android:textSize="30dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
