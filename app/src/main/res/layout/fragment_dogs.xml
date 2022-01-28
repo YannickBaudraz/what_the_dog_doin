@@ -6,136 +6,153 @@
     android:layout_height="match_parent"
     tools:context=".ui.dogs.DogsFragment">
 
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Liste des chiens"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitle">
-
-        <AutoCompleteTextView
-            android:id="@+id/spnOrderBy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:background="#000000"
-            android:hint="Trier par"
-            android:inputType="none"
-            android:padding="0dp"
-            android:textSize="12sp"
-            tools:ignore="TextContrastCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="15dp"
-        android:adjustViewBounds="true"
-        android:columnCount="3"
-        android:useDefaultMargins="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:useDefaultMargins="true">
-
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Snoopy" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Sam" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Aaron" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Ulysse" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Bento" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Abysse" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Ange" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Romeo" />
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
-            android:layout_columnWeight="1"
-            android:text="Prisca" />
-
-    </GridLayout>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/butonAddDog"
+        android:id="@+id/buttonAddDog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/end_margin_form_buttom"
         android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
         android:clickable="true"
         android:contentDescription="Button add a dog"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Chiens"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spnOrderBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Trier par"
+                        android:inputType="none"
+                        android:padding="0dp"
+                        android:textSize="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <GridLayout
+                    android:id="@+id/gridLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:adjustViewBounds="true"
+                    android:columnCount="3"
+                    android:useDefaultMargins="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                    app:useDefaultMargins="true">
+
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Snoopy" />
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Sam" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Aaron" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Ulysse" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Bento" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Abysse" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Ange" />
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Romeo" />
+
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/gray_700"
+                        android:text="Prisca" />
+
+                </GridLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

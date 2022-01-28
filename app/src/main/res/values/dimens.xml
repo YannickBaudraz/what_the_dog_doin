@@ -3,7 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_between_form_items">15dp</dimen>
-    <dimen name="bottom_margin_form_buttom">70dp</dimen>
+    <dimen name="end_margin_form_buttom">16dp</dimen>
+    <dimen name="bottom_margin_form_buttom">16dp</dimen>
     <dimen name="top_margin_form_last_button">45dp</dimen>
     <dimen name="width_form_picture">150dp</dimen>
 </resources>

@@ -6,165 +6,172 @@
     android:layout_height="match_parent"
     tools:context=".ui.dogs.DogAddFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-        android:layout_marginVertical="@dimen/activity_vertical_margin">
-
-        <ImageButton
-            android:id="@+id/imageButtonBack"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@null"
-            android:importantForAccessibility="no"
-            android:screenReaderFocusable="true"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/width_form_picture"
-            android:layout_height="@dimen/width_form_picture"
-            android:layout_marginTop="32dp"
-            android:adjustViewBounds="false"
-            android:cropToPadding="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:src="@drawable/ic_baseline_add_photo_alternate_24" />
-
-        <ImageButton
-            android:id="@+id/imageButtonDelete"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@null"
-            android:importantForAccessibility="no"
-            android:src="@drawable/ic_baseline_delete_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Ajout d'un chien"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/buttonUpdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Créer"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="380dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="27dp"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="32dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.484"
-            app:layout_constraintStart_toStartOf="parent">
+            android:orientation="vertical" >
 
-            <EditText
-                android:id="@+id/textName"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginVertical="@dimen/activity_vertical_margin">
+
+                <ImageButton
+                    android:id="@+id/imageButtonBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:screenReaderFocusable="true"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ajout d'un chien"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButtonDelete"
+                    app:layout_constraintStart_toEndOf="@+id/imageButtonBack"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonDelete"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/width_form_picture"
+                    android:layout_height="@dimen/width_form_picture"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    tools:src="@drawable/ic_baseline_add_photo_alternate_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Nom"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="32dp"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/textBirthday"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Date de naissance"
-                android:inputType="date"
-                android:minHeight="48dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/dropdownBreed"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="@dimen/margin_between_form_items">
-
-                <AutoCompleteTextView
-                    android:id="@+id/spnBreed"
+                <EditText
+                    android:id="@+id/textName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/breeds"
-                    android:inputType="none"
-                    android:padding="0dp"
-                    android:textSize="12dp" />
+                    android:layout_marginBottom="@dimen/margin_between_form_items"
+                    android:ems="10"
+                    android:hint="Nom"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/dropdownMaster"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="@dimen/margin_between_form_items">
-
-                <AutoCompleteTextView
-                    android:id="@+id/spnMaster"
+                <EditText
+                    android:id="@+id/textBirthday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/master"
-                    android:inputType="none"
-                    android:padding="0dp"
-                    android:textSize="12dp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:ems="10"
+                    android:hint="Date de naissance"
+                    android:inputType="date"
+                    android:minHeight="48dp" />
 
-            <EditText
-                android:id="@+id/textSize"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dropdownBreed"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="@dimen/margin_between_form_items">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spnBreed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/breeds"
+                        android:inputType="none"
+                        android:padding="0dp"
+                        android:textSize="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dropdownMaster"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="@dimen/margin_between_form_items">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spnMaster"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/master"
+                        android:inputType="none"
+                        android:padding="0dp"
+                        android:textSize="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <EditText
+                    android:id="@+id/textSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_between_form_items"
+                    android:ems="10"
+                    android:hint="Taille (cm)"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/textExtraInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_between_form_items"
+                    android:ems="10"
+                    android:hint="Informations complémentaires"
+                    android:inputType="textMultiLine"
+                    android:maxLines="7"
+                    android:minHeight="48dp"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Taille (cm)"
-                android:inputType="text"
-                android:minHeight="48dp" />
-
-            <EditText
-                android:id="@+id/textExtraInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Informations complémentaires"
-                android:inputType="textMultiLine"
-                android:maxLines="7"
-                android:minHeight="48dp"
-                android:scrollbars="vertical" />
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginVertical="@dimen/activity_vertical_margin"
+                android:text="Créer" />
 
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </FrameLayout>

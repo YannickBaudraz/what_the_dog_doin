@@ -8,6 +8,13 @@
     <string name="categories">Categories</string>
     <string name="register">Enregistrer</string>
     <string name="master">Maître</string>
+
+    <string-array name="dogs_sort">
+        <item>Ordre alphabétique</item>
+        <item>Age</item>
+        <item>Poids</item>
+    </string-array>
+
     <string-array name="breeds_sort">
         <item>Nom</item>
         <item>Catégorie</item>

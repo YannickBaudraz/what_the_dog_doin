@@ -6,187 +6,176 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".ui.breeds.update.BreedUpdateFragment">
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:adjustViewBounds="true"
-        app:columnCount="3"
-        android:padding="0dp"
-        app:flow_horizontalGap="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:useDefaultMargins="true">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_column="0"
-            app:layout_columnWeight="1"
-            app:layout_row="0" >
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:minHeight="48dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_arrow_back_24"
-                android:text="Button" />
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/textAddSickness"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Race"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_column="1"
-            app:layout_columnWeight="1"
-            app:layout_row="0" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="right"
-            android:orientation="horizontal"
-            app:layout_column="2"
-            app:layout_columnWeight="1"
-            app:layout_row="0" >
-
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:minHeight="48dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_delete_24"
-                android:text="Button" />
-        </RelativeLayout>
-
-    </androidx.gridlayout.widget.GridLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout">
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_between_form_items"
-            android:ems="10"
-            android:hint="Nom"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_between_form_items"
-            android:text="Photo" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="@dimen/width_form_picture"
-            android:layout_height="@dimen/width_form_picture"
-            android:layout_marginBottom="@dimen/margin_between_form_items"
-            tools:src="@mipmap/ic_husky" />
-
-        <EditText
-            android:id="@+id/textExtraInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_between_form_items"
-            android:ems="10"
-            android:hint="Informations complémentaires"
-            android:inputType="textMultiLine"
-            android:maxLines="7"
-            android:minHeight="48dp"
-            android:scrollbars="vertical" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="@dimen/margin_between_form_items">
-
-            <AutoCompleteTextView
-                android:id="@+id/spnOrderBy"
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:layout_weight="1"
-                android:hint="Catégorie"
-                android:inputType="none"
+                android:adjustViewBounds="true"
                 android:padding="0dp"
-                android:textSize="12dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                app:columnCount="3"
+                app:flow_horizontalGap="15dp"
+                app:useDefaultMargins="true">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="@dimen/margin_between_form_items">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
 
-            <AutoCompleteTextView
-                android:id="@+id/spnMorphology"
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:text="Button" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textAddSickness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Race"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    app:layout_column="2"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
+
+                    <ImageButton
+                        android:id="@+id/imageButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        android:text="Button" />
+                </RelativeLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:layout_weight="1"
-                android:hint="Morphologie"
-                android:inputType="none"
-                android:padding="0dp"
-                android:textSize="12dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Nom"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/textSize"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_between_form_items"
-            android:ems="10"
-            android:hint="Taille (cm)"
-            android:inputType="text"
-            android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:text="Photo" />
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="@dimen/width_form_picture"
+                android:layout_height="@dimen/width_form_picture"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                tools:src="@mipmap/ic_husky" />
 
-    <Button
-        android:id="@+id/buttonUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
-        android:text="Enregistrer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            <EditText
+                android:id="@+id/textExtraInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Informations complémentaires"
+                android:inputType="textMultiLine"
+                android:maxLines="7"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="@dimen/margin_between_form_items">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spnOrderBy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:hint="Catégorie"
+                    android:inputType="none"
+                    android:padding="0dp"
+                    android:textSize="12dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="@dimen/margin_between_form_items">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spnMorphology"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:hint="Morphologie"
+                    android:inputType="none"
+                    android:padding="0dp"
+                    android:textSize="12dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/textSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Taille (cm)"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/buttonUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
+                android:text="Enregistrer" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
