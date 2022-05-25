@@ -15,11 +15,8 @@ import kotlinx.coroutines.CoroutineScope
 @Database(
     entities = [
         Category::class,
-<<<<<<< Updated upstream
         Dog::class,
-=======
         Breed::class,
->>>>>>> Stashed changes
     ], version = 1, exportSchema = false
 )
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
