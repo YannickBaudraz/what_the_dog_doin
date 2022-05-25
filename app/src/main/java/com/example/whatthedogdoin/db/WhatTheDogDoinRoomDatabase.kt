@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.whatthedogdoin.db.dao.DogDao
+import com.example.whatthedogdoin.db.dao.CategoryDao
 import com.example.whatthedogdoin.db.entities.Category
 import com.example.whatthedogdoin.db.entities.Dog
 import kotlinx.coroutines.CoroutineScope
@@ -20,6 +21,7 @@ abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
 
     // DAOs
     abstract fun dogDao(): DogDao
+    abstract fun categoryDao(): CategoryDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
