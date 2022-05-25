@@ -8,7 +8,7 @@ class CategoryRepository(private val categoryDao: CategoryDao) : AbstractReposit
 
     // Room executes all queries on a separate thread.
     // Observed Flow will notify the observer when the data has changed.
-    val allCategories: List<Category> = CategoryDao.getCategories();
+    val allCategories: List<Category> = categoryDao.getCategories()
 
     // By default Room runs suspend queries off the main thread, therefore, we don't need to
     // implement anything else to ensure we're not doing long running database work
