@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.dao.CategoryDao
 import com.example.whatthedogdoin.db.dao.DiseaseDao
@@ -22,6 +23,7 @@ import kotlinx.coroutines.CoroutineScope
         Disease::class,
     ], version = 1, exportSchema = false
 )
+@TypeConverters(TypeConverter::class)
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
 
     // DAOs
