@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.dao.CategoryDao
+import com.example.whatthedogdoin.db.entities.Breed
 import com.example.whatthedogdoin.db.entities.Category
 import com.example.whatthedogdoin.db.entities.Dog
 import kotlinx.coroutines.CoroutineScope
@@ -14,7 +15,11 @@ import kotlinx.coroutines.CoroutineScope
 @Database(
     entities = [
         Category::class,
+<<<<<<< Updated upstream
         Dog::class,
+=======
+        Breed::class,
+>>>>>>> Stashed changes
     ], version = 1, exportSchema = false
 )
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
