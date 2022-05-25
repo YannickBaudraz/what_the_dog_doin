@@ -6,9 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.dao.CategoryDao
+import com.example.whatthedogdoin.db.dao.DiseaseDao
 import com.example.whatthedogdoin.db.entities.Breed
 import com.example.whatthedogdoin.db.entities.Category
 import com.example.whatthedogdoin.db.entities.Dog
+import com.example.whatthedogdoin.db.entities.Disease
 import kotlinx.coroutines.CoroutineScope
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
@@ -17,6 +19,7 @@ import kotlinx.coroutines.CoroutineScope
         Category::class,
         Dog::class,
         Breed::class,
+        Disease::class,
     ], version = 1, exportSchema = false
 )
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
@@ -24,6 +27,7 @@ abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
     // DAOs
     abstract fun dogDao(): DogDao
     abstract fun categoryDao(): CategoryDao
+    abstract fun diseaseDao(): DiseaseDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
