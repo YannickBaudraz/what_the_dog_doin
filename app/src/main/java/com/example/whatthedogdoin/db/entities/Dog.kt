@@ -6,18 +6,17 @@ import androidx.room.PrimaryKey
 import java.util.*
 
 @Entity(tableName = "dogs")
-data class Dog (
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
-    @ColumnInfo(name = "noun") val noun: String,
-    @ColumnInfo(name = "female") val female: Boolean,
-    @ColumnInfo(name = "birthdate") val birthdate: Date,
-    @ColumnInfo(name = "sterilized") val sterilized: Boolean,
-    @ColumnInfo(name = "chemical") val chemical: Boolean,
-    @ColumnInfo(name = "color") val color: String?,
-    @ColumnInfo(name = "dead") val dead: Boolean,
-    @ColumnInfo(name = "id_client") val idClient: Int,
-    @ColumnInfo(name = "breed") val breed: Int,
-    @ColumnInfo(name = "crossbreed") val crossbreed: Int?
-        ) {
-
+data class Dog(
+    @PrimaryKey(autoGenerate = true) @ColumnInfo val id: Int,
+    @ColumnInfo val noun: String,
+    @ColumnInfo val female: Boolean,
+    @ColumnInfo val birthdate: Date,
+    @ColumnInfo val sterilized: Boolean,
+    @ColumnInfo val chemical: Boolean,
+    @ColumnInfo val color: String?,
+    @ColumnInfo val dead: Boolean,
+    @ColumnInfo val breed: Int,
+    @ColumnInfo val crossbreed: Int?,
+    @ColumnInfo(name = "id_client") val idClient: Int
+) {
 }

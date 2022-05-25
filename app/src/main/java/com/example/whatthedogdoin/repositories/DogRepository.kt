@@ -1,4 +1,4 @@
-package com.example.whatthedogdoin.model
+package com.example.whatthedogdoin.repositories
 
 import androidx.annotation.WorkerThread
 import com.example.whatthedogdoin.db.dao.DogDao

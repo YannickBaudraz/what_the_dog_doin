@@ -6,12 +6,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.entities.Category
+import com.example.whatthedogdoin.db.entities.Dog
 import kotlinx.coroutines.CoroutineScope
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
 @Database(
     entities = [
-        Category::class
+        Category::class,
+        Dog::class,
     ], version = 1, exportSchema = false
 )
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
