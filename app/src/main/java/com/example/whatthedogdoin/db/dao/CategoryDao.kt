@@ -2,12 +2,13 @@ package com.example.whatthedogdoin.db.dao
 
 import androidx.room.*
 import com.example.whatthedogdoin.db.entities.Category
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CategoryDao {
 
     @Query("SELECT * FROM Categories")
-    fun getCategories(): List<Category>
+    fun getCategories(): Flow<List<Category>>
 
     @Query("SELECT * FROM Categories WHERE id = :id")
     suspend fun getCategory(id: Int): Category
