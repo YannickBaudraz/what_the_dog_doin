@@ -5,29 +5,21 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.whatthedogdoin.db.entities.*
 import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.dao.CategoryDao
+import com.example.whatthedogdoin.db.dao.ClientDao
 import com.example.whatthedogdoin.db.dao.DiseaseDao
-import com.example.whatthedogdoin.db.entities.Breed
-import com.example.whatthedogdoin.db.entities.Category
-import com.example.whatthedogdoin.db.entities.Dog
-import com.example.whatthedogdoin.db.entities.Disease
 import kotlinx.coroutines.CoroutineScope
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
-@Database(
-    entities = [
-        Category::class,
-        Dog::class,
-        Breed::class,
-        Disease::class,
-    ], version = 1, exportSchema = false
-)
+@Database(entities = arrayOf(Breed::class, Category::class, Client::class, ClientTakeService::class, Consultation::class, Disease::class, Dog::class, DogHaveDisease::class, DogHaveService::class, Locality::class, Service::class), version = 1, exportSchema = false)
 @TypeConverters(TypeConverter::class)
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
 
     // DAOs
     abstract fun dogDao(): DogDao
+    abstract fun clientDao(): ClientDao
     abstract fun categoryDao(): CategoryDao
     abstract fun diseaseDao(): DiseaseDao
 

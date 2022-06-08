@@ -4,37 +4,37 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.whatthedogdoin.databinding.FragmentClientsBinding
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.whatthedogdoin.R
+import com.example.whatthedogdoin.WhatTheDogDoinApplication
+import com.example.whatthedogdoin.ui.ViewModelFactory
 
 class ClientsFragment : Fragment() {
 
-    private lateinit var clientsViewModel: ClientsViewModel
-    private var _binding: FragmentClientsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        clientsViewModel =
-                ViewModelProvider(this).get(ClientsViewModel::class.java)
-
-        _binding = FragmentClientsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        return root
+    private val clientViewModel: ClientViewModel by viewModels {
+        ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).clientRepository)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = inflater.inflate(R.layout.fragment_clients, container, false)
+
+        val recyclerView = root.findViewById<RecyclerView>(R.id.client_recyclerview)
+        val adapter = ClientListAdapter()
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        /*clientViewModel.allClients.observe(viewLifecycleOwner) { clients ->
+            clients.let { adapter.submitList(it) }
+        } // */
+
+        clientViewModel.allClientsWithLocalities.observe(viewLifecycleOwner) { clients ->
+            clients.let { adapter.submitList(it) }
+        }
+
+        return root
     }
 }

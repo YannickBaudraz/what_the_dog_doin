@@ -1,7 +1,8 @@
 package com.example.whatthedogdoin.db.dao
 
-import androidx.room.*
+import  androidx.room.*
 import com.example.whatthedogdoin.db.entities.Dog
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface DogDao {
