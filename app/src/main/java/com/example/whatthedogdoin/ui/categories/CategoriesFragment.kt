@@ -15,8 +15,6 @@ class CategoriesFragment : Fragment() {
     private lateinit var categoriesViewModel: CategoriesViewModel
     private var _binding: FragmentCategoriesBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onResume() {
@@ -37,6 +35,14 @@ class CategoriesFragment : Fragment() {
 
         val button = _binding!!.floatingActionButton2
         button.setOnClickListener { openDialog() }
+
+        val root = inflater.inflate(R.layout.fragment_categories, container, false)
+
+        val adapter = CategoryListAdapter()
+
+        categoriesViewModel.allCategories.observe(viewLifecycleOwner) { categories ->
+            categories.let { adapter.submitList(it) }
+        }
 
         return binding.root
     }
