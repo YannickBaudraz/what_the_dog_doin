@@ -36,14 +36,6 @@ class CategoriesFragment : Fragment() {
         val button = _binding!!.floatingActionButton2
         button.setOnClickListener { openDialog() }
 
-        val root = inflater.inflate(R.layout.fragment_categories, container, false)
-
-        val adapter = CategoryListAdapter()
-
-        categoriesViewModel.allCategories.observe(viewLifecycleOwner) { categories ->
-            categories.let { adapter.submitList(it) }
-        }
-
         return binding.root
     }
 
