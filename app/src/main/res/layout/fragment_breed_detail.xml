@@ -84,15 +84,14 @@
                     app:layout_row="0">
 
                     <ImageButton
-                        android:id="@+id/imageButton4"
-                        android:layout_width="24dp"
+                        android:id="@+id/buttonDeleteBreed"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:minHeight="48dp"
                         android:scaleType="fitCenter"
-                        android:src="@null"
-                        android:text="Button"
-                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        android:src="@drawable/ic_baseline_delete_24"
+                        android:text="Button" />
                 </RelativeLayout>
 
             </androidx.gridlayout.widget.GridLayout>
@@ -154,7 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
-                android:text="Update" />
+                android:text="Enregistrer" />
         </LinearLayout>
     </ScrollView>
 

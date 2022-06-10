@@ -29,4 +29,9 @@ class BreedRepository(private val breedDao: BreedDao) : AbstractRepository() {
     suspend fun update(breed: Breed) {
         breedDao.update(breed)
     }
+
+    @WorkerThread
+    suspend fun delete(breed: Breed) {
+        breedDao.delete(breed)
+    }
 }

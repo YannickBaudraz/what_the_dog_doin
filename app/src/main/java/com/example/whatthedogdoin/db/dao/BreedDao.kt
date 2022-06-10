@@ -25,6 +25,9 @@ interface BreedDao {
     @Update
     suspend fun updateBreeds(vararg breeds: Breed)
 
+    @Delete(entity = Breed::class)
+    suspend fun delete(breed: Breed)
+
     @Delete
     suspend fun deleteBreeds(vararg breeds: Breed)
 }

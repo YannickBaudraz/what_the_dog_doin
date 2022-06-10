@@ -24,12 +24,18 @@ class BreedDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_breed_detail, container, false)
         val goBackButton: ImageButton = root.findViewById(R.id.breedGoBack)
+        val deleteButton: ImageButton = root.findViewById(R.id.buttonDeleteBreed)
         val submitButton: Button = root.findViewById(R.id.buttonBreedUpdate)
         val id = arguments?.getInt(Constants.ID_KEY) ?: 0
         val breedLiveData = breedViewModel.find(id)
 
         goBackButton.setOnClickListener() {
-            requireActivity().onBackPressed()
+            goBack()
+        }
+
+        deleteButton.setOnClickListener() {
+            breedLiveData.value?.let { it -> breedViewModel.delete(it) }
+            goBack()
         }
 
         submitButton.setOnClickListener() {
@@ -52,5 +58,9 @@ class BreedDetailFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun goBack() {
+        requireActivity().onBackPressed()
     }
 }

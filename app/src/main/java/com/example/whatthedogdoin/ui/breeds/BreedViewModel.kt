@@ -24,4 +24,8 @@ class BreedViewModel(private val repository: BreedRepository) : ViewModel() {
     fun update(breed: Breed) = viewModelScope.launch {
         repository.update(breed)
     }
+
+    fun delete(breed: Breed) = viewModelScope.launch {
+        repository.delete(breed)
+    }
 }

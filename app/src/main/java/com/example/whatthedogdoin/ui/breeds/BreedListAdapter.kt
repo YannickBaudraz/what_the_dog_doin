@@ -29,7 +29,7 @@ class BreedListAdapter : ListAdapter<Breed, BreedListAdapter.BreedViewHolder>(
         private val nameItemView: TextView = itemView.findViewById(R.id.breedAdapter)
 
         fun bind(breed: Breed?) {
-            nameItemView.text = breed?.noun + " " + breed?.idCategory;
+            nameItemView.text = breed?.noun
 
             itemView.setOnClickListener {
                 val bundle = bundleOf(Constants.ID_KEY to breed?.id)
