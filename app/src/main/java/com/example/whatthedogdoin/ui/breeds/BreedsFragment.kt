@@ -26,10 +26,6 @@ class BreedsFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        /*clientViewModel.allClients.observe(viewLifecycleOwner) { clients ->
-            clients.let { adapter.submitList(it) }
-        } // */
-
         breedViewModel.allBreeds.observe(viewLifecycleOwner) { breeds ->
            breeds.let { adapter.submitList(it) }
         }

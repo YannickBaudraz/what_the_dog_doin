@@ -20,4 +20,8 @@ class BreedViewModel(private val repository: BreedRepository) : ViewModel() {
         }
         return currentBreed
     }
+
+    fun update(breed: Breed) = viewModelScope.launch {
+        repository.update(breed)
+    }
 }

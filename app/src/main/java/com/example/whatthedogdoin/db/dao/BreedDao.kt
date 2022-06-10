@@ -19,6 +19,9 @@ interface BreedDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(breed: Breed)
 
+    @Update(entity = Breed::class)
+    suspend fun update(breed: Breed)
+
     @Update
     suspend fun updateBreeds(vararg breeds: Breed)
 

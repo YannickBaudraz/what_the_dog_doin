@@ -24,4 +24,9 @@ class BreedRepository(private val breedDao: BreedDao) : AbstractRepository() {
     suspend fun find(id: Int): Breed {
         return breedDao.find(id)
     }
+
+    @WorkerThread
+    suspend fun update(breed: Breed) {
+        breedDao.update(breed)
+    }
 }

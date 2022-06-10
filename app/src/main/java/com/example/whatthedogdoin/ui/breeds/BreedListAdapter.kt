@@ -13,8 +13,6 @@ import com.example.whatthedogdoin.Constants
 import com.example.whatthedogdoin.R
 import com.example.whatthedogdoin.db.entities.Breed
 
-//import com.example.whatthedogdoin.db.entities.relations.ClientWithLocality
-
 class BreedListAdapter : ListAdapter<Breed, BreedListAdapter.BreedViewHolder>(
     BreedsComparator()
 ) {
