@@ -19,7 +19,20 @@
         android:id="@+id/navigation_breeds"
         android:name="com.example.whatthedogdoin.ui.breeds.BreedsFragment"
         android:label="@string/breeds"
-        tools:layout="@layout/fragment_breeds" />
+        tools:layout="@layout/fragment_breeds">
+        <action
+            android:id="@+id/action_breed_to_breedDetail"
+            app:destination="@id/breedDetail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/breedDetail"
+        android:name="com.example.whatthedogdoin.ui.breeds.BreedDetailFragment"
+        android:label="Détails de la race"
+        tools:layout="@layout/fragment_breed_detail">
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+    </fragment>
     <fragment
         android:id="@+id/navigation_diseases"
         android:name="com.example.whatthedogdoin.ui.diseases.DiseasesFragment"

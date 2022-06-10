@@ -4,46 +4,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.whatthedogdoin.databinding.FragmentBreedsBinding
-import com.example.whatthedogdoin.R;
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.whatthedogdoin.R
+import com.example.whatthedogdoin.WhatTheDogDoinApplication
+import com.example.whatthedogdoin.ui.ViewModelFactory
 
 class BreedsFragment : Fragment() {
 
-    private lateinit var breedsViewModel: BreedsViewModel
-    private var _binding: FragmentBreedsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onResume() {
-        super.onResume()
-
-        val orderBy = resources.getStringArray(R.array.breeds_sort);
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, orderBy);
-        binding.spnOrderBy.setAdapter(arrayAdapter);
+    private val breedViewModel: BreedViewModel by viewModels {
+        ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).breedRepository)
     }
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        breedsViewModel =
-                ViewModelProvider(this).get(BreedsViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = inflater.inflate(R.layout.fragment_breeds, container, false)
 
-        _binding = FragmentBreedsBinding.inflate(inflater, container, false)
+        val recyclerView = root.findViewById<RecyclerView>(R.id.breed_recyclerview)
+        val adapter = BreedListAdapter()
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val root: View = binding.root
+        /*clientViewModel.allClients.observe(viewLifecycleOwner) { clients ->
+            clients.let { adapter.submitList(it) }
+        } // */
+
+        breedViewModel.allBreeds.observe(viewLifecycleOwner) { breeds ->
+           breeds.let { adapter.submitList(it) }
+        }
 
         return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

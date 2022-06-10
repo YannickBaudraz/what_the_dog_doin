@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.whatthedogdoin.db.dao.BreedDao
 import com.example.whatthedogdoin.db.entities.*
 import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.dao.ClientDao
@@ -18,6 +19,7 @@ abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
     // DAOs
     abstract fun dogDao(): DogDao
     abstract fun clientDao(): ClientDao
+    abstract fun breedDao(): BreedDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
