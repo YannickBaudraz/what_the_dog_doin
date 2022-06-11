@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BreedDao {
-    @Query("SELECT * FROM breeds")
+    @Query("SELECT * FROM breeds ORDER BY noun COLLATE NOCASE")
     fun getBreeds(): Flow<List<Breed>>
 
     @Query("SELECT * FROM breeds WHERE id = :id")

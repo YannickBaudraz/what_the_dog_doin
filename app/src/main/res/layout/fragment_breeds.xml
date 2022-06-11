@@ -29,4 +29,18 @@ tools:context=".ui.breeds.BreedsFragment">
     app:layout_constraintTop_toBottomOf="@+id/textBreeds"
     tools:listitem="@layout/breed_adapter" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonAddBreed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/end_margin_form_buttom"
+        android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
+        android:clickable="true"
+        android:contentDescription="Button add a breed"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

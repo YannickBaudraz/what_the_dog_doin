@@ -39,7 +39,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                     app:layout_row="0">
 
                     <ImageButton
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/boBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
@@ -51,10 +51,10 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/textAddSickness"
+                    android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Anémie du chien"
+                    android:text="Ajouter une race"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     app:layout_column="1"
@@ -85,7 +85,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
             </androidx.gridlayout.widget.GridLayout>
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
@@ -93,32 +93,6 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:hint="Nom"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:text="Photo" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="@dimen/width_form_picture"
-                android:layout_height="@dimen/width_form_picture"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                tools:src="@mipmap/ic_husky" />
-
-            <EditText
-                android:id="@+id/textExtraInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Informations complémentaires"
-                android:inputType="textMultiLine"
-                android:maxLines="7"
-                android:minHeight="48dp"
-                android:scrollbars="vertical" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -129,7 +103,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:layout_marginBottom="@dimen/margin_between_form_items">
 
                 <AutoCompleteTextView
-                    android:id="@+id/spnOrderBy"
+                    android:id="@+id/category"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
@@ -140,38 +114,130 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                     android:textSize="12dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="@dimen/margin_between_form_items">
-
-                <AutoCompleteTextView
-                    android:id="@+id/spnMorphology"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:hint="Morphologie"
-                    android:inputType="none"
-                    android:padding="0dp"
-                    android:textSize="12dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
             <EditText
-                android:id="@+id/textSize"
+                android:id="@+id/link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Taille (cm)"
+                android:hint="Lien"
+                android:inputType="textUri"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/morphotype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Morphotype"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+
+            <EditText
+                android:id="@+id/classification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Classification"
                 android:inputType="text"
                 android:minHeight="48dp" />
 
+            <EditText
+                android:id="@+id/femaleMinSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Taille minimale femelle"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/femaleMaxSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Taille maximale femelle"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/maleMinSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Taille minimale mâle"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/maleMaxSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Taille maximale mâle"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/femaleMinWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Poids minimum femelle"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/femaleMaxWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Poids maximum femelle"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/maleMinWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Poids minimum mâle"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/maleMaxWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Poids maximum mâle"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/lifeExpectancy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Espérance de vie"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:scrollbars="vertical" />
+
             <Button
-                android:id="@+id/buttonAdd"
+                android:id="@+id/add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/bottom_margin_form_buttom"

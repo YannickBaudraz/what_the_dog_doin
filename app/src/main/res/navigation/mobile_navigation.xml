@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_breed_to_breedDetail"
             app:destination="@id/breedDetail"/>
+        <action
+            android:id="@+id/action_breed_to_breedAdd"
+            app:destination="@id/breedAdd"/>
     </fragment>
     <fragment
         android:id="@+id/breedDetail"
@@ -32,6 +35,12 @@
         <argument
             android:name="id"
             app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/breedAdd"
+        android:name="com.example.whatthedogdoin.ui.breeds.add.BreedAddFragment"
+        android:label="Ajouter une race"
+        tools:layout="@layout/fragment_breed_add">
     </fragment>
     <fragment
         android:id="@+id/navigation_diseases"

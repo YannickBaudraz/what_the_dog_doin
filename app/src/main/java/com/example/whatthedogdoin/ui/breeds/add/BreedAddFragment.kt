@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import com.example.whatthedogdoin.R;
 import android.view.ViewGroup
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.EditText
+import android.widget.ImageButton
+import androidx.fragment.app.viewModels
+import com.example.whatthedogdoin.WhatTheDogDoinApplication
+import com.example.whatthedogdoin.db.entities.Breed
+import com.example.whatthedogdoin.ui.ViewModelFactory
+import com.example.whatthedogdoin.ui.breeds.BreedViewModel
+import com.google.android.material.button.MaterialButton
 
 /**
  * A simple [Fragment] subclass.
@@ -18,24 +21,75 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class BreedAddFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val breedViewModel: BreedViewModel by viewModels {
+        ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).breedRepository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_breed_add, container, false)
+        val root = inflater.inflate(R.layout.fragment_breed_add, container, false)
+        val buttonGoBack: ImageButton = root.findViewById(R.id.boBack)
+        val buttonSubmit: MaterialButton = root.findViewById(R.id.add)
+
+        buttonGoBack.setOnClickListener() {
+            goBack()
+        }
+
+        buttonSubmit.setOnClickListener() {
+            val name: String = root.findViewById<EditText>(R.id.name).text.toString()
+            val link: String = root.findViewById<EditText>(R.id.link).text.toString()
+            val morphotype: String = root.findViewById<EditText>(R.id.morphotype).text.toString()
+            //val category: EditText = root.findViewById(R.id.category)
+            val classification: String =
+                root.findViewById<EditText>(R.id.classification).text.toString()
+            val femaleMinSize: Int =
+                root.findViewById<EditText>(R.id.femaleMinSize).text.toString().toInt()
+            val femaleMaxSize: Int =
+                root.findViewById<EditText>(R.id.femaleMaxSize).text.toString().toInt()
+            val maleMinSize: Int =
+                root.findViewById<EditText>(R.id.maleMinSize).text.toString().toInt()
+            val maleMaxSize: Int =
+                root.findViewById<EditText>(R.id.maleMaxSize).text.toString().toInt()
+            val femaleMinWeight: Int =
+                root.findViewById<EditText>(R.id.femaleMinWeight).text.toString().toInt()
+            val femaleMaxWeight: Int =
+                root.findViewById<EditText>(R.id.femaleMaxWeight).text.toString().toInt()
+            val maleMinWeight: Int =
+                root.findViewById<EditText>(R.id.maleMinWeight).text.toString().toInt()
+            val maleMaxWeight: Int =
+                root.findViewById<EditText>(R.id.maleMaxWeight).text.toString().toInt()
+            val lifeExpectancy: Int =
+                root.findViewById<EditText>(R.id.lifeExpectancy).text.toString().toInt()
+
+            val breed = Breed(
+                picture = "MY PICTURE",
+                noun = name,
+                link = link,
+                morphotype = morphotype,
+                idCategory = 2,
+                classification = classification,
+                minimumSizeFemale = femaleMinSize,
+                maximumSizeFemale = femaleMaxSize,
+                minimumSizeMale = maleMinSize,
+                maximumSizeMale = maleMaxSize,
+                minimumWeightFemale = femaleMinWeight,
+                maximumWeightFemale = femaleMaxWeight,
+                minimumWeightMale = maleMinWeight,
+                maximumWeightMale = maleMaxWeight,
+                lifeExpectancy = lifeExpectancy
+            )
+            breedViewModel.insert(breed)
+            goBack()
+        }
+
+        return root
     }
 
     companion object {
@@ -47,14 +101,14 @@ class BreedAddFragment : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment BreedAddFragment.
          */
-        // TODO: Rename and change types and number of parameters
+// TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             BreedAddFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
             }
+    }
+
+    private fun goBack() {
+        requireActivity().onBackPressed()
     }
 }

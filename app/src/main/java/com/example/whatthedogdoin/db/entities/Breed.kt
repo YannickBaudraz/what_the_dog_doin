@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "breeds")
 data class Breed (
-    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "link") val link: String?,
     @ColumnInfo(name = "picture") val picture: String?,
     @ColumnInfo(name = "noun") val noun: String,
@@ -23,5 +22,6 @@ data class Breed (
     @ColumnInfo(name = "max_weight_male") val maximumWeightMale: Int?,
     @ColumnInfo(name = "life_expectancy") var lifeExpectancy: Int?
 ) {
-
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
 }
