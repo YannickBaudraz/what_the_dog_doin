@@ -49,40 +49,27 @@ class BreedAddFragment : Fragment() {
             //val category: EditText = root.findViewById(R.id.category)
             val classification: String =
                 root.findViewById<EditText>(R.id.classification).text.toString()
-            val femaleMinSize: Int =
-                root.findViewById<EditText>(R.id.femaleMinSize).text.toString().toInt()
             val femaleMaxSize: Int =
-                root.findViewById<EditText>(R.id.femaleMaxSize).text.toString().toInt()
-            val maleMinSize: Int =
-                root.findViewById<EditText>(R.id.maleMinSize).text.toString().toInt()
+                root.findViewById<EditText>(R.id.averageFemaleSize).text.toString().toInt()
             val maleMaxSize: Int =
-                root.findViewById<EditText>(R.id.maleMaxSize).text.toString().toInt()
-            val femaleMinWeight: Int =
-                root.findViewById<EditText>(R.id.femaleMinWeight).text.toString().toInt()
+                root.findViewById<EditText>(R.id.averageMaleSize).text.toString().toInt()
             val femaleMaxWeight: Int =
-                root.findViewById<EditText>(R.id.femaleMaxWeight).text.toString().toInt()
-            val maleMinWeight: Int =
-                root.findViewById<EditText>(R.id.maleMinWeight).text.toString().toInt()
+                root.findViewById<EditText>(R.id.averageFemaleWeight).text.toString().toInt()
             val maleMaxWeight: Int =
-                root.findViewById<EditText>(R.id.maleMaxWeight).text.toString().toInt()
+                root.findViewById<EditText>(R.id.averageMaleWeight).text.toString().toInt()
             val lifeExpectancy: Int =
                 root.findViewById<EditText>(R.id.lifeExpectancy).text.toString().toInt()
 
             val breed = Breed(
-                picture = "MY PICTURE",
                 noun = name,
                 link = link,
                 morphotype = morphotype,
                 idCategory = 2,
                 classification = classification,
-                minimumSizeFemale = femaleMinSize,
-                maximumSizeFemale = femaleMaxSize,
-                minimumSizeMale = maleMinSize,
-                maximumSizeMale = maleMaxSize,
-                minimumWeightFemale = femaleMinWeight,
-                maximumWeightFemale = femaleMaxWeight,
-                minimumWeightMale = maleMinWeight,
-                maximumWeightMale = maleMaxWeight,
+                averageSizeFemale = femaleMaxSize,
+                averageSizeMale = maleMaxSize,
+                averageWeightFemale = femaleMaxWeight,
+                averageWeightMale = maleMaxWeight,
                 lifeExpectancy = lifeExpectancy
             )
             breedViewModel.insert(breed)

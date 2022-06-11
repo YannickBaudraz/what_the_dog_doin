@@ -146,82 +146,45 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/femaleMinSize"
+                android:id="@+id/averageFemaleSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Taille minimale femelle"
+                android:hint="Taille moyenne femelle"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
+
             <EditText
-                android:id="@+id/femaleMaxSize"
+                android:id="@+id/averageMaleSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Taille maximale femelle"
+                android:hint="Taille moyenne mâle"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
+
             <EditText
-                android:id="@+id/maleMinSize"
+                android:id="@+id/averageFemaleWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Taille minimale mâle"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:scrollbars="vertical" />
-            <EditText
-                android:id="@+id/maleMaxSize"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Taille maximale mâle"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:scrollbars="vertical" />
-            <EditText
-                android:id="@+id/femaleMinWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Poids minimum femelle"
+                android:hint="Poids  moyen femelle"
                 android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
+
             <EditText
-                android:id="@+id/femaleMaxWeight"
+                android:id="@+id/averageMaleWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Poids maximum femelle"
-                android:inputType="numberDecimal"
-                android:minHeight="48dp"
-                android:scrollbars="vertical" />
-            <EditText
-                android:id="@+id/maleMinWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Poids minimum mâle"
-                android:inputType="numberDecimal"
-                android:minHeight="48dp"
-                android:scrollbars="vertical" />
-            <EditText
-                android:id="@+id/maleMaxWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_between_form_items"
-                android:ems="10"
-                android:hint="Poids maximum mâle"
+                android:hint="Poids moyen mâle"
                 android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
