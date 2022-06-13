@@ -28,4 +28,9 @@ class ClientRepository(private val clientDao: ClientDao) : AbstractRepository() 
     suspend fun findClientWithLocalityAndDogWithBreedAndDiseasesById(id: Int): ClientWithLocalityAndDogWithBreedAndDiseases {
         return clientDao.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)
     }
+
+    @WorkerThread
+    suspend fun delete(client: Client) {
+        clientDao.delete(client)
+    }
 }

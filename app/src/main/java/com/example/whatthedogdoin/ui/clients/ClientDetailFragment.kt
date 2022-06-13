@@ -22,11 +22,17 @@ class ClientDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_client_detail, container, false)
         val goBackButton: ImageButton = root.findViewById(R.id.breedGoBack)
+        val deleteButton: ImageButton = root.findViewById(R.id.buttonDeleteBreed)
         val id = arguments?.getInt(Constants.ID_KEY) ?: 0
         val clientLiveData = clientViewModel.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)
 
         goBackButton.setOnClickListener() {
-            requireActivity().onBackPressed()
+            goBack()
+        }
+
+        deleteButton.setOnClickListener() {
+            clientLiveData.value?.let { it -> clientViewModel.delete(it.client) }
+            goBack()
         }
 
         clientLiveData.observe(viewLifecycleOwner) { client ->
@@ -36,5 +42,9 @@ class ClientDetailFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun goBack() {
+        requireActivity().onBackPressed()
     }
 }
