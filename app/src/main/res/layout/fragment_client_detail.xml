@@ -4,20 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.client.ClientFragment">
+    tools:context=".ui.clients.ClientDetailFragment">
 
-    <TextView
-        android:id="@+id/text_id"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                app:columnCount="3"
+                app:flow_horizontalGap="15dp"
+                app:useDefaultMargins="true">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
+
+                    <ImageButton
+                        android:id="@+id/breedGoBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:text="Button"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/breedTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:text="Client"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    app:layout_column="2"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
+
+                    <ImageButton
+                        android:id="@+id/buttonDeleteBreed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        android:text="Button" />
+                </RelativeLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <!-- FirstName -->
+            <TextView
+                android:id="@+id/textviewFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:text="Prénom" />
+            <EditText
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Prénom"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <!-- LastName -->
+            <TextView
+                android:id="@+id/textviewLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:text="Nom" />
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Nom"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <!-- Dog -->
+            <TextView
+                android:id="@+id/textviewDog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:text="Chien" />
+            <EditText
+                android:id="@+id/dog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:ems="10"
+                android:hint="Chien"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/buttonBreedUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enregistrer" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
