@@ -6,14 +6,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "diseases")
 data class Disease (
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
-    @ColumnInfo(name = "noun") val noun: String,
-    @ColumnInfo(name = "description") val description: String,
-    @ColumnInfo(name = "symptoms") val symptoms: String,
-    @ColumnInfo(name = "preventive") val preventive: String,
-    @ColumnInfo(name = "curative") val curative: String,
-    @ColumnInfo(name = "vaccinable") val vaccinable: Boolean,
-    @ColumnInfo(name = "zoonosis") val zoonosis: Boolean
-) {
-
-}
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo var id: Int = 0,
+    @ColumnInfo val noun: String,
+    @ColumnInfo val description: String,
+    @ColumnInfo val symptoms: String,
+    @ColumnInfo val preventive: String,
+    @ColumnInfo val curative: String,
+    @ColumnInfo val vaccinable: Boolean,
+    @ColumnInfo val zoonosis: Boolean
+)

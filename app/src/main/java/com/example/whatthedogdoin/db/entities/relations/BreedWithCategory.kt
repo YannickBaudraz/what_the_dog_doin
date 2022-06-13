@@ -12,5 +12,4 @@ data class BreedWithCategory(
         entityColumn = "id"
     )
     val category: Category?
-) {
-}
+)

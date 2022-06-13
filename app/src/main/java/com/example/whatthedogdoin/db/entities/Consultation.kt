@@ -6,13 +6,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "consultations")
 data class Consultation(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
-    @ColumnInfo(name = "situation") val situation: String,
-    @ColumnInfo(name = "goal") val goal: String?,
-    @ColumnInfo(name = "deadline") val deadline: String?,
-    @ColumnInfo(name = "solution") val solution: String?,
-    @ColumnInfo(name = "medicines") val medicines: String?,
-    @ColumnInfo(name = "argumentation") val argumentation: String?,
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo var id: Int = 0,
+    @ColumnInfo val situation: String,
+    @ColumnInfo val goal: String?,
+    @ColumnInfo val deadline: String?,
+    @ColumnInfo val solution: String?,
+    @ColumnInfo val medicines: String?,
+    @ColumnInfo val argumentation: String?,
     @ColumnInfo(name = "id_service") val idService: Int
-) {
-}
+)

@@ -6,10 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "clients_take_services")
 data class ClientTakeService (
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo var id: Int = 0,
     @ColumnInfo(name = "id_client") val idClient: Int,
     @ColumnInfo(name = "id_service") val idService: Int,
-    @ColumnInfo(name = "paid") val paid: Boolean
-        ) {
-
-}
+    @ColumnInfo val paid: Boolean
+)

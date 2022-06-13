@@ -16,5 +16,4 @@ data class DogWithBreed(
         entityColumn = "id"
     )
     val crossbreed: Breed?
-) {
-}
+)

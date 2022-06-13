@@ -17,5 +17,4 @@ data class ClientWithLocalityAndDogWithBreedAndDiseases(
         entityColumn = "id_client"
     )
     val dogs: List<DogWithBreedAndDiseases>
-) {
-}
+)

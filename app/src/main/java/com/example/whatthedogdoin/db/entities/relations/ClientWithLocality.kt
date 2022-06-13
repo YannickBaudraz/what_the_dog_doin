@@ -11,5 +11,4 @@ data class ClientWithLocality(
         entityColumn = "id"
     )
     val locality: Locality?
-) {
-}
+)

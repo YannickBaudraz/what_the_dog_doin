@@ -12,5 +12,4 @@ data class CategoryWithBreeds(
         entityColumn = "idCategory"
     )
     val breeds: List<Breed>
-) {
-}
+)

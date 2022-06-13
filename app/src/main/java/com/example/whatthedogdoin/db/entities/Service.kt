@@ -6,13 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "services")
 data class Service (
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
-    @ColumnInfo(name = "moment") val moment: String,
-    @ColumnInfo(name = "duration") val duration: Float,
-    @ColumnInfo(name = "type") val type: String,
-    @ColumnInfo(name = "description") val description: String?,
-    @ColumnInfo(name = "street") val street: String?,
-    @ColumnInfo(name = "id_locality") val idLocality: Int
-        ) {
-
-}
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo val id: Int,
+    @ColumnInfo val moment: String,
+    @ColumnInfo val duration: Float,
+    @ColumnInfo val type: String,
+    @ColumnInfo val description: String?,
+    @ColumnInfo val street: String?,
+    @ColumnInfo(name = "id_locality") val idLocality: Int,
+)

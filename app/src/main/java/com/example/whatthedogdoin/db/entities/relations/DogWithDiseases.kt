@@ -13,5 +13,4 @@ data class DogWithDiseases(
         associateBy = Junction(DogHaveDisease::class)
     )
     val diseases: List<Disease>
-) {
-}
+)
