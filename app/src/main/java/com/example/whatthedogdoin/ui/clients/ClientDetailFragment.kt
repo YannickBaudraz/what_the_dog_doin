@@ -21,8 +21,13 @@ class ClientDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_client_detail, container, false)
+        val goBackButton: ImageButton = root.findViewById(R.id.breedGoBack)
         val id = arguments?.getInt(Constants.ID_KEY) ?: 0
         val clientLiveData = clientViewModel.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)
+
+        goBackButton.setOnClickListener() {
+            requireActivity().onBackPressed()
+        }
 
         clientLiveData.observe(viewLifecycleOwner) { client ->
             root.findViewById<TextView>(R.id.firstname).text = client.client.firstname
