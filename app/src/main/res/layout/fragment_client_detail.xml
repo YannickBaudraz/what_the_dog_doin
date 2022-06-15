@@ -72,7 +72,7 @@
                     app:layout_row="0">
 
                     <ImageButton
-                        android:id="@+id/buttonDeleteBreed"
+                        android:id="@+id/buttonDeleteClient"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
@@ -125,21 +125,22 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:text="Chien" />
-            <EditText
+            <TextView
                 android:id="@+id/dog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
+                android:textColor="@color/white"
                 android:ems="10"
-                android:hint="Chien"
-                android:inputType="text"
-                android:minHeight="48dp" />
+                android:textSize="16sp" />
 
             <Button
-                android:id="@+id/buttonBreedUpdate"
+                android:id="@+id/buttonUpdateClient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:paddingVertical="15dp"
                 android:text="Enregistrer" />
         </LinearLayout>
     </ScrollView>

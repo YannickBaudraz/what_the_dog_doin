@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 
 class ClientViewModel(private val repository: ClientRepository) : ViewModel() {
 
-    val allClients: LiveData<List<Client>> = repository.allClients.asLiveData()
     val allClientsWithLocalities: LiveData<List<ClientWithLocality>> = repository.allClientsWithLocalities.asLiveData()
 
     fun insert(client: Client) = viewModelScope.launch {
@@ -23,6 +22,10 @@ class ClientViewModel(private val repository: ClientRepository) : ViewModel() {
             currentClient.value = repository.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)
         }
         return currentClient
+    }
+
+    fun update(client: Client) = viewModelScope.launch {
+        repository.update(client)
     }
 
     fun delete(client: Client) = viewModelScope.launch {

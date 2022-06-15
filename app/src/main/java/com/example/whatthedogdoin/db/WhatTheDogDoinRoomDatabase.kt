@@ -17,7 +17,6 @@ import kotlinx.coroutines.CoroutineScope
 abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
 
     // DAOs
-    abstract fun dogDao(): DogDao
     abstract fun clientDao(): ClientDao
     abstract fun breedDao(): BreedDao
 
