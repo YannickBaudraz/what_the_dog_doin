@@ -5,48 +5,46 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.whatthedogdoin.R
 import com.example.whatthedogdoin.WhatTheDogDoinApplication
-import com.example.whatthedogdoin.databinding.FragmentCategoriesBinding
 import com.example.whatthedogdoin.ui.ViewModelFactory
-import com.example.whatthedogdoin.ui.breeds.BreedViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CategoriesFragment : Fragment() {
 
     private val categoryViewModel: CategoryViewModel by viewModels {
         ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).categoryRepository)
     }
-    private var _binding: FragmentCategoriesBinding? = null
-
-    private val binding get() = _binding!!
-
-    override fun onResume() {
-        super.onResume()
-
-        val orderBy = resources.getStringArray(R.array.category_sort)
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, orderBy)
-        binding.spnOrderBy.setAdapter(arrayAdapter)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
+    ): View? {
+        val root = inflater.inflate(R.layout.fragment_categories, container, false)
 
-        val button = _binding!!.floatingActionButton2
-        button.setOnClickListener { openDialog() }
+        val orderBy = resources.getStringArray(R.array.category_sort)
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, orderBy)
+        root.findViewById<AutoCompleteTextView>(R.id.spnOrderBy).setAdapter(arrayAdapter)
 
-        return binding.root
-    }
+        val recyclerView = root.findViewById<RecyclerView>(R.id.category_recyclerview)
+        val adapter = CategoryListAdapter()
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        categoryViewModel.allCategories.observe(viewLifecycleOwner) { categories ->
+            categories.let { adapter.submitList(it) }
+        }
+
+        val addCategoryButton: FloatingActionButton = root.findViewById(R.id.buttonAddCategory)
+        addCategoryButton.setOnClickListener { openDialog() }
+
+        return root
     }
 
     private fun openDialog() {
