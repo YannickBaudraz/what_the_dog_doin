@@ -6,13 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import com.example.whatthedogdoin.R;
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageButton
+import android.widget.*
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.whatthedogdoin.WhatTheDogDoinApplication
+import com.example.whatthedogdoin.databinding.FragmentBreedAddBinding
+import com.example.whatthedogdoin.databinding.FragmentDogsBinding
 import com.example.whatthedogdoin.db.entities.Breed
+import com.example.whatthedogdoin.db.entities.Category
 import com.example.whatthedogdoin.ui.ViewModelFactory
 import com.example.whatthedogdoin.ui.breeds.BreedViewModel
+import com.example.whatthedogdoin.ui.categories.CategoryViewModel
 import com.google.android.material.button.MaterialButton
 
 /**
@@ -23,6 +27,9 @@ import com.google.android.material.button.MaterialButton
 class BreedAddFragment : Fragment() {
     private val breedViewModel: BreedViewModel by viewModels {
         ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).breedRepository)
+    }
+    private val categoryViewModel: CategoryViewModel by viewModels {
+        ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).categoryRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +42,26 @@ class BreedAddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_breed_add, container, false)
-        val buttonGoBack: ImageButton = root.findViewById(R.id.boBack)
+        val buttonGoBack: ImageButton = root.findViewById(R.id.goBack)
         val buttonSubmit: MaterialButton = root.findViewById(R.id.add)
+
+        val spinner: Spinner = root.findViewById(R.id.category)
+        val adapter = BreedAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item)
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val item = parent.getItemAtPosition(position)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+        categoryViewModel.allCategories.observe(viewLifecycleOwner, Observer { c ->
+            c?.forEach {
+                adapter.apply {
+                    mCategories.add(it)
+                    notifyDataSetChanged()
+                }
+            }
+        })
+        spinner.adapter = adapter
 
         buttonGoBack.setOnClickListener() {
             goBack()
@@ -46,7 +71,7 @@ class BreedAddFragment : Fragment() {
             val name: String = root.findViewById<EditText>(R.id.name).text.toString()
             val link: String = root.findViewById<EditText>(R.id.link).text.toString()
             val morphotype: String = root.findViewById<EditText>(R.id.morphotype).text.toString()
-            //val category: EditText = root.findViewById(R.id.category)
+            val category : Category = spinner.selectedItem as Category
             val classification: String =
                 root.findViewById<EditText>(R.id.classification).text.toString()
             val femaleMaxSize: Int =
@@ -64,7 +89,7 @@ class BreedAddFragment : Fragment() {
                 noun = name,
                 link = link,
                 morphotype = morphotype,
-                idCategory = 2,
+                idCategory = category.id,
                 classification = classification,
                 averageSizeFemale = femaleMaxSize,
                 averageSizeMale = maleMaxSize,

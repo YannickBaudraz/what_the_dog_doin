@@ -6,13 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.whatthedogdoin.R
+import com.example.whatthedogdoin.WhatTheDogDoinApplication
 import com.example.whatthedogdoin.databinding.FragmentCategoriesBinding
+import com.example.whatthedogdoin.ui.ViewModelFactory
+import com.example.whatthedogdoin.ui.breeds.BreedViewModel
 
 class CategoriesFragment : Fragment() {
 
-    private lateinit var categoriesViewModel: CategoriesViewModel
+    private val categoryViewModel: CategoryViewModel by viewModels {
+        ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).categoryRepository)
+    }
     private var _binding: FragmentCategoriesBinding? = null
 
     private val binding get() = _binding!!
@@ -30,7 +36,6 @@ class CategoriesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        categoriesViewModel = ViewModelProvider(this).get(CategoriesViewModel::class.java)
         _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
 
         val button = _binding!!.floatingActionButton2
