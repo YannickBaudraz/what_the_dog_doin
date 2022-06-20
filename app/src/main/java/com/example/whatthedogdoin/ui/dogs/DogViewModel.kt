@@ -2,6 +2,7 @@ package com.example.whatthedogdoin.ui.dogs
 
 import androidx.lifecycle.*
 import com.example.whatthedogdoin.db.entities.Dog
+import com.example.whatthedogdoin.db.entities.relations.DogWithClientAndBreed
 import com.example.whatthedogdoin.repositories.DogRepository
 import kotlinx.coroutines.launch
 
@@ -16,6 +17,14 @@ class DogViewModel(private val repository: DogRepository) : ViewModel() {
         val currentDog = MutableLiveData<Dog>()
         viewModelScope.launch {
             currentDog.value = repository.find(id)
+        }
+        return currentDog
+    }
+
+    fun findDogWithClientAndBreedById(id: Int): LiveData<DogWithClientAndBreed> {
+        val currentDog = MutableLiveData<DogWithClientAndBreed>()
+        viewModelScope.launch {
+            currentDog.value = repository.findDogWithClientAndBreedById(id)
         }
         return currentDog
     }

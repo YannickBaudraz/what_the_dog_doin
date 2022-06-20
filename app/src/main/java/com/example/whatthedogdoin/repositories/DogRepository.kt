@@ -2,8 +2,8 @@ package com.example.whatthedogdoin.repositories
 
 import androidx.annotation.WorkerThread
 import com.example.whatthedogdoin.db.dao.DogDao
-import com.example.whatthedogdoin.db.entities.Breed
 import com.example.whatthedogdoin.db.entities.Dog
+import com.example.whatthedogdoin.db.entities.relations.DogWithClientAndBreed
 import kotlinx.coroutines.flow.Flow
 
 class DogRepository(private val dogDao: DogDao) : AbstractRepository() {
@@ -24,6 +24,11 @@ class DogRepository(private val dogDao: DogDao) : AbstractRepository() {
     @WorkerThread
     suspend fun find(id: Int): Dog {
         return dogDao.find(id)
+    }
+
+    @WorkerThread
+    suspend fun findDogWithClientAndBreedById(id: Int): DogWithClientAndBreed {
+        return dogDao.findDogWithClientAndBreedById(id)
     }
 
     @WorkerThread

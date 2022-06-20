@@ -61,19 +61,4 @@
             tools:listitem="@layout/dog_adapter" />
 
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonAddDog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/end_margin_form_buttom"
-        android:layout_marginBottom="@dimen/bottom_margin_form_buttom"
-        android:clickable="true"
-        android:contentDescription="Ajouter un chien"
-        android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

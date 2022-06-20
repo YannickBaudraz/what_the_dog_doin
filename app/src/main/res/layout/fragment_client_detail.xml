@@ -40,7 +40,7 @@
                     app:layout_row="0">
 
                     <ImageButton
-                        android:id="@+id/breedGoBack"
+                        android:id="@+id/clientGoBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
@@ -52,7 +52,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/breedTitle"
+                    android:id="@+id/clientTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -72,7 +72,7 @@
                     app:layout_row="0">
 
                     <ImageButton
-                        android:id="@+id/buttonDeleteClient"
+                        android:id="@+id/clientDelete"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
