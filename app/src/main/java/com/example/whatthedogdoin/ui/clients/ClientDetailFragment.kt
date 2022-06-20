@@ -23,8 +23,8 @@ class ClientDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_client_detail, container, false)
-        val goBackButton: ImageButton = root.findViewById(R.id.breedGoBack)
-        val deleteButton: ImageButton = root.findViewById(R.id.buttonDeleteClient)
+        val goBackButton: ImageButton = root.findViewById(R.id.clientGoBack)
+        val deleteButton: ImageButton = root.findViewById(R.id.clientDelete)
         val submitButton: Button = root.findViewById(R.id.buttonUpdateClient)
         val id = arguments?.getInt(Constants.ID_KEY) ?: 0
         val clientLiveData = clientViewModel.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)

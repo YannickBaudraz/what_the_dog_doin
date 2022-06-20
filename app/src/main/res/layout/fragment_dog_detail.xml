@@ -8,64 +8,80 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Topbar -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-                android:layout_marginVertical="@dimen/activity_vertical_margin">
+                android:layout_marginBottom="30dp"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                app:columnCount="3"
+                app:flow_horizontalGap="15dp"
+                app:useDefaultMargins="true">
 
-                <ImageButton
-                    android:id="@+id/imageButtonBack"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="#00FFFFFF"
-                    android:contentDescription="Bouton de retour"
-                    android:src="@drawable/ic_baseline_arrow_back_24"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
+
+                    <ImageButton
+                        android:id="@+id/dogGoBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:text="Button"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/dogTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Laïka"
+                    android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:text="Chien"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonDelete"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="#00FFFFFF"
-                    android:contentDescription=" "
-                    android:src="@drawable/ic_baseline_edit_24"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    app:layout_column="2"
+                    app:layout_columnWeight="1"
+                    app:layout_row="0">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="@dimen/width_form_picture"
-                    android:layout_height="@dimen/width_form_picture"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView"
-                    tools:src="@mipmap/ic_border_colie" />
+                    <ImageButton
+                        android:id="@+id/dogDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        android:text="Button" />
+                </RelativeLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.gridlayout.widget.GridLayout>
 
+            <!-- Master -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -82,16 +98,41 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textViewMasterValue"
+                    android:id="@+id/master"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="118dp"
-                    android:text="Marcel Pellerin"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textViewMaster"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Name -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nom"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="118dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Breed -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -106,16 +147,16 @@
                     android:text="Race" />
 
                 <TextView
-                    android:id="@+id/textViewBreedValue"
+                    android:id="@+id/breed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="118dp"
-                    android:text="Border collie"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textViewBreed"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Gender -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -124,23 +165,22 @@
                 android:layout_marginEnd="16dp">
 
                 <TextView
-                    android:id="@+id/textViewAgeValue"
+                    android:id="@+id/textViewGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sexe" />
+
+                <TextView
+                    android:id="@+id/gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="118dp"
-                    android:text="3 ans"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textViewAge"
+                    app:layout_constraintStart_toStartOf="@+id/textViewGender"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textViewAge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Age" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Sterilized -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -149,51 +189,22 @@
                 android:layout_marginEnd="16dp">
 
                 <TextView
-                    android:id="@+id/textViewDiseases"
+                    android:id="@+id/textViewSterilized"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Maladies"
+                    android:text="Stérile"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textViewDiseasesValue"
+                    android:id="@+id/sterilized"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="118dp"
-                    android:text="Arthrose, Arthrite"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textViewDiseases"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSterilized"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp">
-
-                <TextView
-                    android:id="@+id/textViewNote"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Note"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textViewNoteValue"
-                    android:layout_width="0dp"
-                    android:layout_height="112dp"
-                    android:layout_marginStart="118dp"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscimg elit. Morbi accumsan vitae mi ac luctus"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
     </ScrollView>
 
