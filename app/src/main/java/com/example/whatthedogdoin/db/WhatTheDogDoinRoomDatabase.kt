@@ -21,6 +21,7 @@ abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
     abstract fun clientDao(): ClientDao
     abstract fun breedDao(): BreedDao
     abstract fun categoryDao(): CategoryDao
+    abstract fun dogDao(): DogDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the

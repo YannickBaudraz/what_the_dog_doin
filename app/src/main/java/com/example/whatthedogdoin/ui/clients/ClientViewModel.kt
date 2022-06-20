@@ -1,7 +1,6 @@
 package com.example.whatthedogdoin.ui.clients
 
 import androidx.lifecycle.*
-import com.example.whatthedogdoin.db.entities.Breed
 import com.example.whatthedogdoin.db.entities.Client
 import com.example.whatthedogdoin.db.entities.relations.ClientWithLocality
 import com.example.whatthedogdoin.db.entities.relations.ClientWithLocalityAndDogWithBreedAndDiseases

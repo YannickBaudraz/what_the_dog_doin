@@ -10,11 +10,26 @@
         android:name="com.example.whatthedogdoin.ui.categories.CategoriesFragment"
         android:label="@string/categories"
         tools:layout="@layout/fragment_categories" />
+
     <fragment
         android:id="@+id/navigation_dogs"
         android:name="com.example.whatthedogdoin.ui.dogs.DogsFragment"
         android:label="@string/dogs"
-        tools:layout="@layout/fragment_dogs" />
+        tools:layout="@layout/fragment_dogs" >
+        <action
+            android:id="@+id/action_dogs_to_dogDetail"
+            app:destination="@id/dogDetail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/dogDetail"
+        android:name="com.example.whatthedogdoin.ui.dogs.DogDetailFragment"
+        android:label="Détails du chien"
+        tools:layout="@layout/fragment_dog_detail">
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_breeds"
         android:name="com.example.whatthedogdoin.ui.breeds.BreedsFragment"

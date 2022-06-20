@@ -15,7 +15,7 @@ import com.example.whatthedogdoin.WhatTheDogDoinApplication
 import com.example.whatthedogdoin.R
 import com.example.whatthedogdoin.ui.ViewModelFactory
 
-class BreedDetailFragment : Fragment() {
+    class BreedDetailFragment : Fragment() {
 
     private val breedViewModel: BreedViewModel by viewModels {
         ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).breedRepository)
