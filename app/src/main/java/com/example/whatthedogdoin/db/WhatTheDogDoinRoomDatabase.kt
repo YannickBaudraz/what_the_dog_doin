@@ -5,11 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.whatthedogdoin.db.dao.BreedDao
+import com.example.whatthedogdoin.db.dao.*
 import com.example.whatthedogdoin.db.entities.*
-import com.example.whatthedogdoin.db.dao.DogDao
-import com.example.whatthedogdoin.db.dao.DiseaseDao
-import com.example.whatthedogdoin.db.dao.ClientDao
 import kotlinx.coroutines.CoroutineScope
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
@@ -22,6 +19,7 @@ abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
     abstract fun diseaseDao(): DiseaseDao
     abstract fun clientDao(): ClientDao
     abstract fun breedDao(): BreedDao
+    abstract fun categoryDao(): CategoryDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the

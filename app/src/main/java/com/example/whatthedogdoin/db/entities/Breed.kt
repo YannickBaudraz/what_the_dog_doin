@@ -18,4 +18,6 @@ data class Breed (
     @ColumnInfo(name = "average_weight_female") val averageWeightFemale: Int?,
     @ColumnInfo(name = "average_weight_male") val averageWeightMale: Int?,
     @ColumnInfo(name = "life_expectancy") var lifeExpectancy: Int?
-)
+) {
+    override fun toString(): String = this.noun
+}

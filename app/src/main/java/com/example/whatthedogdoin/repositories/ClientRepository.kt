@@ -2,6 +2,7 @@ package com.example.whatthedogdoin.repositories
 
 import androidx.annotation.WorkerThread
 import com.example.whatthedogdoin.db.dao.ClientDao
+import com.example.whatthedogdoin.db.dao.DogDao
 import com.example.whatthedogdoin.db.entities.Client
 import com.example.whatthedogdoin.db.entities.relations.ClientWithLocality
 import com.example.whatthedogdoin.db.entities.relations.ClientWithLocalityAndDogWithBreedAndDiseases
@@ -27,6 +28,11 @@ class ClientRepository(private val clientDao: ClientDao) : AbstractRepository() 
     @WorkerThread
     suspend fun findClientWithLocalityAndDogWithBreedAndDiseasesById(id: Int): ClientWithLocalityAndDogWithBreedAndDiseases {
         return clientDao.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)
+    }
+
+    @WorkerThread
+    suspend fun update(client: Client) {
+        clientDao.update(client)
     }
 
     @WorkerThread

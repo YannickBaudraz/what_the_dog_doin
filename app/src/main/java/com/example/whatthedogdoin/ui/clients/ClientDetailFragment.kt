@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -22,7 +24,8 @@ class ClientDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_client_detail, container, false)
         val goBackButton: ImageButton = root.findViewById(R.id.breedGoBack)
-        val deleteButton: ImageButton = root.findViewById(R.id.buttonDeleteBreed)
+        val deleteButton: ImageButton = root.findViewById(R.id.buttonDeleteClient)
+        val submitButton: Button = root.findViewById(R.id.buttonUpdateClient)
         val id = arguments?.getInt(Constants.ID_KEY) ?: 0
         val clientLiveData = clientViewModel.findClientWithLocalityAndDogWithBreedAndDiseasesById(id)
 
@@ -33,6 +36,16 @@ class ClientDetailFragment : Fragment() {
         deleteButton.setOnClickListener() {
             clientLiveData.value?.let { it -> clientViewModel.delete(it.client) }
             goBack()
+        }
+
+        submitButton.setOnClickListener() {
+            val firstname: EditText = root.findViewById(R.id.firstname)
+            val lastname: EditText = root.findViewById(R.id.lastname)
+
+            clientLiveData.value?.client?.firstname = firstname.text.toString()
+            clientLiveData.value?.client?.lastname = lastname.text.toString()
+
+            clientLiveData.value?.let { it -> clientViewModel.update(it.client) }
         }
 
         clientLiveData.observe(viewLifecycleOwner) { client ->

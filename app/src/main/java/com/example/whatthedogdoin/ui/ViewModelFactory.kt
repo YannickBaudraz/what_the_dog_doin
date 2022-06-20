@@ -4,9 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.whatthedogdoin.repositories.AbstractRepository
 import com.example.whatthedogdoin.repositories.BreedRepository
+import com.example.whatthedogdoin.repositories.CategoryRepository
 import com.example.whatthedogdoin.repositories.ClientRepository
 import com.example.whatthedogdoin.repositories.DiseaseRepository
 import com.example.whatthedogdoin.ui.breeds.BreedViewModel
+import com.example.whatthedogdoin.ui.categories.CategoryViewModel
 import com.example.whatthedogdoin.ui.clients.ClientViewModel
 import com.example.whatthedogdoin.ui.diseases.DiseaseViewModel
 import java.lang.IllegalArgumentException
@@ -22,6 +24,9 @@ class ViewModelFactory(private val repository: AbstractRepository) : ViewModelPr
         }else if (modelClass.isAssignableFrom(DiseaseViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return DiseaseViewModel(repository as DiseaseRepository) as T
+        }else if (modelClass.isAssignableFrom(CategoryViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return CategoryViewModel(repository as CategoryRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

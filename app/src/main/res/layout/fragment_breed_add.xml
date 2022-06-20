@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ui.breeds.add.BreedAddFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.breeds.add.BreedAddFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                     app:layout_row="0">
 
                     <ImageButton
-                        android:id="@+id/boBack"
+                        android:id="@+id/goBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
@@ -94,25 +94,20 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            <TextView
+                android:id="@+id/categoriesLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="@dimen/margin_between_form_items">
-
-                <AutoCompleteTextView
-                    android:id="@+id/category"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:hint="Catégorie"
-                    android:inputType="none"
-                    android:padding="0dp"
-                    android:textSize="12dp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:text="Catégories" />
+            <Spinner
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="1"
+                android:hint="Catégorie"
+                android:inputType="none"
+                android:padding="0dp"
+                android:textSize="12dp" />
 
             <EditText
                 android:id="@+id/link"
@@ -151,7 +146,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Taille moyenne femelle"
+                android:hint="Taille moyenne femelle (cm)"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
@@ -162,7 +157,7 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Taille moyenne mâle"
+                android:hint="Taille moyenne mâle (cm)"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
@@ -184,17 +179,18 @@ tools:context=".ui.breeds.add.BreedAddFragment">
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Poids moyen mâle"
+                android:hint="Poids moyen mâle (kg)"
                 android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />
+
             <EditText
                 android:id="@+id/lifeExpectancy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_between_form_items"
                 android:ems="10"
-                android:hint="Espérance de vie"
+                android:hint="Espérance de vie (ans)"
                 android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 android:scrollbars="vertical" />

@@ -19,11 +19,12 @@ class CategoryListAdapter : ListAdapter<Category, CategoryListAdapter.CategoryVi
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val current = getItem(position)
+        holder.bind(current)
     }
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameItemView: TextView = itemView.findViewById(R.id.text_categories)
+        private val nameItemView: TextView = itemView.findViewById(R.id.name)
 
         fun bind(category: Category?) {
             nameItemView.text = category?.noun
@@ -32,7 +33,7 @@ class CategoryListAdapter : ListAdapter<Category, CategoryListAdapter.CategoryVi
         companion object {
             fun create(parent: ViewGroup): CategoryViewHolder {
                 val view: View = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.fragment_categories, parent, false)
+                    .inflate(R.layout.category_adapter, parent, false)
                 return CategoryViewHolder(view)
             }
         }
