@@ -12,74 +12,76 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:orientation="vertical">
 
-            <!-- Topbar -->
             <androidx.gridlayout.widget.GridLayout
-                android:id="@+id/gridLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="30dp"
-                android:adjustViewBounds="true"
-                android:padding="0dp"
-                app:columnCount="3"
-                app:flow_horizontalGap="15dp"
-                app:useDefaultMargins="true">
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        app:columnCount="3"
+        app:flow_horizontalGap="15dp"
+        app:useDefaultMargins="true">
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:layout_column="0"
-                    app:layout_columnWeight="1"
-                    app:layout_row="0">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="0">
 
-                    <ImageButton
-                        android:id="@+id/dogGoBack"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:minHeight="48dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_baseline_arrow_back_24"
-                        android:text="Button"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </RelativeLayout>
+            <ImageButton
+                android:id="@+id/dogGoBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:minHeight="48dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:text="Button"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/dogTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:text="Chien"
-                    app:layout_column="1"
-                    app:layout_columnWeight="1"
-                    app:layout_row="0" />
+        <TextView
+            android:id="@+id/dogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:text="Chien"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="0" />
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    app:layout_column="2"
-                    app:layout_columnWeight="1"
-                    app:layout_row="0">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_row="0">
 
-                    <ImageButton
-                        android:id="@+id/dogDelete"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:minHeight="48dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_baseline_delete_24"
-                        android:text="Button" />
-                </RelativeLayout>
-
-            </androidx.gridlayout.widget.GridLayout>
+            <ImageButton
+                android:id="@+id/dogDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:minHeight="48dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:text="Button" />
+        </RelativeLayout>
+    </androidx.gridlayout.widget.GridLayout>
 
             <!-- Master -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,15 +95,15 @@
                     android:id="@+id/textViewMaster"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Maître"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:paddingVertical="14dp"
+                    android:text="Maître" />
 
-                <TextView
+                <Button
                     android:id="@+id/master"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="118dp"
+                    android:layout_marginStart="100dp"
+                    android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textViewMaster"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -119,16 +121,16 @@
                     android:id="@+id/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nom"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:paddingVertical="14dp"
+                    android:text="Nom" />
 
                 <TextView
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="118dp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textViewName"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -144,13 +146,16 @@
                     android:id="@+id/textViewBreed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingVertical="14dp"
                     android:text="Race" />
 
-                <TextView
+                <Button
                     android:id="@+id/breed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="118dp"
+                    android:layout_marginStart="100dp"
+                    android:height="40dp"
+                    android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textViewBreed"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -168,13 +173,14 @@
                     android:id="@+id/textViewGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingVertical="14dp"
                     android:text="Sexe" />
 
                 <TextView
                     android:id="@+id/gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="118dp"
+                    android:layout_marginStart="100dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textViewGender"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -192,14 +198,14 @@
                     android:id="@+id/textViewSterilized"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Stérile"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:paddingVertical="14dp"
+                    android:text="Stérile" />
 
                 <TextView
                     android:id="@+id/sterilized"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="118dp"
+                    android:layout_marginStart="100dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textViewSterilized"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -207,5 +213,4 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
-
 </FrameLayout>

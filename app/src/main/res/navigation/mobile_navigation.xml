@@ -27,7 +27,13 @@
         tools:layout="@layout/fragment_dog_detail">
         <argument
             android:name="id"
-            app:argType="integer"/>
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_dog_to_clientDetail"
+            app:destination="@id/clientDetail" />
+        <action
+            android:id="@+id/action_dog_to_breedDetail"
+            app:destination="@id/breedDetail" />
     </fragment>
 
     <fragment

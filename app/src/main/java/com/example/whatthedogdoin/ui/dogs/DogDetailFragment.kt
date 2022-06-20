@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.whatthedogdoin.Constants
 import com.example.whatthedogdoin.WhatTheDogDoinApplication
 import com.example.whatthedogdoin.R
+import com.example.whatthedogdoin.db.entities.Dog
+import com.example.whatthedogdoin.db.entities.relations.DogWithClientAndBreed
 import com.example.whatthedogdoin.ui.ViewModelFactory
 import java.util.*
 
@@ -24,6 +29,10 @@ class DogDetailFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_dog_detail, container, false)
         val goBackButton: ImageButton = root.findViewById(R.id.dogGoBack)
         val deleteButton: ImageButton = root.findViewById(R.id.dogDelete)
+
+        val masterLabel: TextView = root.findViewById(R.id.master)
+        val breedLabel: TextView = root.findViewById(R.id.breed)
+
         val id = arguments?.getInt(Constants.ID_KEY) ?: 0
         val dogLiveData = dogViewModel.findDogWithClientAndBreedById(id)
 
@@ -36,10 +45,20 @@ class DogDetailFragment : Fragment() {
             goBack()
         }
 
+        masterLabel.setOnClickListener {
+            val bundle = bundleOf(Constants.ID_KEY to dogLiveData.value?.client?.id)
+            masterLabel.findNavController().navigate(R.id.action_dog_to_clientDetail, bundle)
+        }
+
+        breedLabel.setOnClickListener {
+            val bundle = bundleOf(Constants.ID_KEY to dogLiveData.value?.breed?.id)
+            breedLabel.findNavController().navigate(R.id.action_dog_to_breedDetail, bundle)
+        }
+
         dogLiveData.observe(viewLifecycleOwner) { dog ->
-            root.findViewById<TextView>(R.id.name).text = dog.dog.noun
-            root.findViewById<TextView>(R.id.master).text = dog.client.firstname + " " + dog.client.lastname
-            root.findViewById<TextView>(R.id.breed).text = dog.breed.noun
+            root.findViewById<TextView>(R.id.name).text = dog?.dog?.noun
+            masterLabel.text = dog?.client?.firstname + " " + dog?.client?.lastname
+            breedLabel.text = dog?.crossbreed?.noun ?: dog?.breed?.noun
             root.findViewById<TextView>(R.id.gender).text = if (dog.dog.female) "Femelle" else "Mâle"
             root.findViewById<TextView>(R.id.sterilized).text = if (dog.dog.sterilized) "Oui" else "Non"
         }

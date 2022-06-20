@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     tools:context=".ui.dogs.DogsFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,34 +19,6 @@
             android:text="@string/dogs"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/spnConstraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/spnText"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <AutoCompleteTextView
-                    android:id="@+id/spnOrderBy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/order_by"
-                    android:inputType="none"
-                    android:padding="0dp"
-                    android:textSize="12sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dog_recyclerview"
             android:layout_width="match_parent"
@@ -59,6 +30,5 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDogs"
             tools:listitem="@layout/dog_adapter" />
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
