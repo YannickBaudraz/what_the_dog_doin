@@ -2,7 +2,6 @@ package com.example.whatthedogdoin.ui.diseases
 
 import androidx.lifecycle.*
 import com.example.whatthedogdoin.db.entities.Disease
-import com.example.whatthedogdoin.db.entities.relations.ClientWithLocalityAndDogWithBreedAndDiseases
 import com.example.whatthedogdoin.repositories.DiseaseRepository
 import kotlinx.coroutines.launch
 
@@ -14,13 +13,15 @@ class DiseaseViewModel(private val repository: DiseaseRepository) : ViewModel() 
     val allDiseases: LiveData<List<Disease>> = repository.allDiseases.asLiveData()
 
     fun getDisease(id: Int): LiveData<Disease> {
-        val currentClient = MutableLiveData<Disease>()
+        val currentDisease = MutableLiveData<Disease>()
         viewModelScope.launch {
-            currentClient.value = repository.getDisease(id)
+            currentDisease.value = repository.getDisease(id)
         }
-        return currentClient
+        return currentDisease
     }
-
+    fun update(disease: Disease) = viewModelScope.launch {
+        repository.update(disease)
+    }
     fun delete(disease: Disease) = viewModelScope.launch {
         repository.delete(disease)
     }

@@ -39,7 +39,6 @@
                     app:flow_horizontalGap="5dp"
                     app:useDefaultMargins="false">
 
-
                     <ImageButton
                         android:id="@+id/diseaseGoBack"
                         android:layout_width="wrap_content"
@@ -49,12 +48,14 @@
                         android:scaleType="fitCenter"
                         android:src="@drawable/ic_baseline_arrow_back_24"
                         android:text="Button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textAddSickness"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
-                    <TextView
+                    <EditText
                         android:id="@+id/textAddSickness"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -62,13 +63,10 @@
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textSize="24sp"
-                        app:layout_column="1"
-                        app:layout_columnWeight="0"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/buttonDeleteDisease"
                         app:layout_constraintStart_toEndOf="@+id/diseaseGoBack"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_row="0" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                     <ImageButton
@@ -199,91 +197,146 @@
                         android:id="@+id/textInputLayout1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintStart_toStartOf="parent">
 
                         <AutoCompleteTextView
                             android:id="@+id/buttonDescription"
                             android:layout_width="match_parent"
                             android:layout_height="59dp"
                             android:layout_margin="0dp"
+                            android:hint="Description"
                             android:inputType="none"
                             android:padding="0dp"
-                            android:textSize="30dp"
-                            tools:text="Description" />
+                            android:textSize="30dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
+                    <EditText
                         android:id="@+id/textDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:minHeight="48dp"
                         android:text="TextView"
                         android:textAlignment="viewStart"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout1"
-                        tools:text="L’anémie chez le chien est une pathologie due à la baisse du taux sanguin d’hémoglobine.  Cette insuffisance de globule rouge entraine une mauvaise libération de l’oxygène dans l’organisme.  On distingue 2 types d’anémie :  L’anémie non régénérative consécutive à une baisse de production d’hémoglobine, provoquée soit par une affection de la moelle osseuse, une affection systémique (insuffisance rénale, insuffisance immunitaire, problème de thyroïde …etc.) ou encore un déficit en fer, protéines ou vitamine B12. L’anémie régénérative due à une destruction des globules rouges et provoquée par soit une hémorragie, une infestation de parasites, un ulcère de l’intestin, une inflammation du système immunitaire, une tumeur sanglante d’un organe, une intervention chirurgicale, un traumatisme ou une ingestion de produit toxique.  Très important : En cas de moindre doute, allez consulter votre vétérinaire rapidement." />
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textDescription">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/buttonSymptomes"
+                            android:layout_width="match_parent"
+                            android:layout_height="59dp"
+                            android:layout_margin="0dp"
+                            android:hint="Symptômes"
+                            android:inputType="none"
+                            android:padding="0dp"
+                            android:textSize="30dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <EditText
+                        android:id="@+id/textSymptoms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:text="TextView"
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textSymptoms">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/buttonTraitements"
+                            android:layout_width="match_parent"
+                            android:layout_height="59dp"
+                            android:layout_margin="0dp"
+                            android:hint="Traitements"
+                            android:inputType="none"
+                            android:padding="0dp"
+                            android:textSize="30dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <EditText
+                        android:id="@+id/textTreatements"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:text="TextView"
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textTreatements">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/buttonPreventions"
+                            android:layout_width="match_parent"
+                            android:layout_height="59dp"
+                            android:layout_margin="0dp"
+                            android:hint="Préventions"
+                            android:inputType="none"
+                            android:padding="0dp"
+                            android:textSize="30dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <EditText
+                        android:id="@+id/textPreventions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:text="TextView"
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+                    <Button
+                        android:id="@+id/buttonUpdateDisease"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="15dp"
+                        android:text="Enregistrer"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPreventions" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout2"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/buttonSymptomes"
-                        android:layout_width="match_parent"
-                        android:layout_height="59dp"
-                        android:layout_margin="0dp"
-                        android:hint="Symptômes"
-                        android:inputType="none"
-                        android:padding="0dp"
-                        android:textSize="30dp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout3"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/buttonPreventions"
-                        android:layout_width="match_parent"
-                        android:layout_height="59dp"
-                        android:layout_margin="0dp"
-                        android:hint="Préventions"
-                        android:inputType="none"
-                        android:padding="0dp"
-                        android:textSize="30dp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/buttonTraitements"
-                        android:layout_width="match_parent"
-                        android:layout_height="59dp"
-                        android:layout_margin="0dp"
-                        android:hint="Traitements"
-                        android:inputType="none"
-                        android:padding="0dp"
-                        android:textSize="30dp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </ScrollView>
 

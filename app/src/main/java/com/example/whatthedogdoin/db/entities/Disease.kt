@@ -8,11 +8,11 @@ import androidx.room.PrimaryKey
 data class Disease (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo var id: Int = 0,
-    @ColumnInfo val noun: String,
-    @ColumnInfo val description: String,
-    @ColumnInfo val symptoms: String,
-    @ColumnInfo val preventive: String,
-    @ColumnInfo val curative: String,
+    @ColumnInfo var noun: String,
+    @ColumnInfo var description: String,
+    @ColumnInfo var symptoms: String,
+    @ColumnInfo var preventive: String,
+    @ColumnInfo var curative: String,
     @ColumnInfo val vaccinable: Boolean,
     @ColumnInfo val zoonosis: Boolean
 )

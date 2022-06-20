@@ -26,6 +26,11 @@ class DiseaseRepository(private val diseaseDao: DiseaseDao) : AbstractRepository
         return diseaseDao.getDisease(id)
     }
     @WorkerThread
+    suspend fun update(disease: Disease) {
+        diseaseDao.update(disease)
+    }
+
+    @WorkerThread
     suspend fun delete(disease: Disease) {
         diseaseDao.delete(disease)
     }

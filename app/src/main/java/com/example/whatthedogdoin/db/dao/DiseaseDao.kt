@@ -1,7 +1,6 @@
 package com.example.whatthedogdoin.db.dao
 
 import androidx.room.*
-import com.example.whatthedogdoin.db.entities.Client
 import com.example.whatthedogdoin.db.entities.Disease
 import kotlinx.coroutines.flow.Flow
 
@@ -20,8 +19,8 @@ interface DiseaseDao {
     @Delete(entity = Disease::class)
     suspend fun delete(disease: Disease)
 
-    @Update
-    suspend fun updateDisease(vararg disease: Disease)
+    @Update(entity = Disease::class)
+    suspend fun update(vararg disease: Disease)
 
     @Delete
     suspend fun deleteDisease(vararg disease: Disease)
