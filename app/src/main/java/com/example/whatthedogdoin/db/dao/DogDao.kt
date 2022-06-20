@@ -1,6 +1,7 @@
 package com.example.whatthedogdoin.db.dao
 
 import  androidx.room.*
+import com.example.whatthedogdoin.db.entities.Breed
 import com.example.whatthedogdoin.db.entities.Dog
 import kotlinx.coroutines.flow.Flow
 
@@ -8,17 +9,18 @@ import kotlinx.coroutines.flow.Flow
 interface DogDao {
 
     @Query("SELECT * FROM dogs")
-    fun getDogs(): List<Dog>
+    fun all(): Flow<List<Dog>>
+
 
     @Query("SELECT * FROM dogs WHERE id = :id")
-    suspend fun getDog(id: Int): Dog
+    suspend fun find(id: Int): Dog
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(dog: Dog)
 
     @Update
-    suspend fun updateDogs(vararg dogs: Dog)
+    suspend fun update(dog: Dog)
 
     @Delete
-    suspend fun deleteDogs(vararg dogs: Dog)
+    suspend fun delete(dog: Dog)
 }

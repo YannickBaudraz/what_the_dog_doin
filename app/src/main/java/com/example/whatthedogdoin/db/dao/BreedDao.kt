@@ -2,7 +2,6 @@ package com.example.whatthedogdoin.db.dao
 
 import androidx.room.*
 import com.example.whatthedogdoin.db.entities.Breed;
-import com.example.whatthedogdoin.db.entities.relations.ClientWithLocalityAndDogWithBreedAndDiseases
 import kotlinx.coroutines.flow.Flow
 
 @Dao

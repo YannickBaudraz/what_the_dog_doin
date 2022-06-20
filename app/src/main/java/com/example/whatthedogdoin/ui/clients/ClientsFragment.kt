@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.whatthedogdoin.R
 import com.example.whatthedogdoin.WhatTheDogDoinApplication
 import com.example.whatthedogdoin.ui.ViewModelFactory
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ClientsFragment : Fragment() {
 
@@ -26,10 +25,6 @@ class ClientsFragment : Fragment() {
         val adapter = ClientListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
-
-        /*clientViewModel.allClients.observe(viewLifecycleOwner) { clients ->
-            clients.let { adapter.submitList(it) }
-        } // */
 
         clientViewModel.allClientsWithLocalities.observe(viewLifecycleOwner) { clients ->
             clients.let { adapter.submitList(it) }
