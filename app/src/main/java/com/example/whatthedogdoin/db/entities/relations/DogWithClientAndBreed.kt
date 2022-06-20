@@ -20,5 +20,5 @@ data class DogWithClientAndBreed(
         parentColumn = "id",
         entityColumn = "id"
     )
-    val client: Client
+    val client: Client?
 )

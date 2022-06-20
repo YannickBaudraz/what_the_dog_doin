@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whatthedogdoin.R
 import com.example.whatthedogdoin.WhatTheDogDoinApplication
 import com.example.whatthedogdoin.ui.ViewModelFactory
+
 
 class DogsFragment : Fragment() {
 
@@ -24,7 +25,7 @@ class DogsFragment : Fragment() {
         val recyclerView = root.findViewById<RecyclerView>(R.id.dog_recyclerview)
         val adapter = DogListAdapter()
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = GridLayoutManager(context, 2)
 
         dogViewModel.allDogs.observe(viewLifecycleOwner) { dogs ->
             dogs.let { adapter.submitList(it) }
