@@ -4,11 +4,13 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/create_category"
+        android:id="@+id/addCategoryText"
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:hint="Nom de la catégorie" />
+        android:hint="@string/categoryName"
+        android:autofillHints="name" />
 
 </RelativeLayout>

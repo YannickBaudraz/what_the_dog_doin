@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.whatthedogdoin.R
 import com.example.whatthedogdoin.WhatTheDogDoinApplication
 import com.example.whatthedogdoin.ui.ViewModelFactory
+import com.example.whatthedogdoin.ui.categories.add.CategoryAddDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CategoriesFragment : Fragment() {
@@ -48,7 +49,7 @@ class CategoriesFragment : Fragment() {
     }
 
     private fun openDialog() {
-        val createCategoryDialog = CreateCategoryDialog()
+        val createCategoryDialog = CategoryAddDialog()
         createCategoryDialog.showNow(parentFragmentManager, "Créer catégorie")
     }
 }
