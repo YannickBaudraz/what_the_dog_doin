@@ -4,40 +4,33 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.whatthedogdoin.databinding.FragmentDiseasesBinding
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.whatthedogdoin.R
+import com.example.whatthedogdoin.WhatTheDogDoinApplication
+import com.example.whatthedogdoin.ui.ViewModelFactory
+
 
 class DiseasesFragment : Fragment() {
 
-    private lateinit var diseasesViewModel: DiseasesViewModel
-    private var _binding: FragmentDiseasesBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        diseasesViewModel = ViewModelProvider(this).get(DiseasesViewModel::class.java)
-
-        _binding = FragmentDiseasesBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textDiseases
-        diseasesViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        }) // */
-        return root
+    private val diseaseViewModel: DiseaseViewModel by viewModels {
+        ViewModelFactory((requireActivity().application as WhatTheDogDoinApplication).diseaseRepository)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = inflater.inflate(R.layout.fragment_diseases, container, false)
+
+        val recyclerView = root.findViewById<RecyclerView>(R.id.disease_recyclerview)
+        val adapter = DiseaseListAdapter()
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        diseaseViewModel.allDiseases.observe(viewLifecycleOwner) { diseases ->
+            diseases.let { adapter.submitList(it) }
+        }
+
+        return root
     }
 }

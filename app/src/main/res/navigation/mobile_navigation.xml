@@ -47,6 +47,18 @@
         android:name="com.example.whatthedogdoin.ui.diseases.DiseasesFragment"
         android:label="@string/diseases"
         tools:layout="@layout/fragment_diseases" />
+        <action
+            android:id="@+id/action_disease_to_diseaseDetail"
+            app:destination="@id/diseaseDetail"/>
+    <fragment
+        android:id="@+id/diseaseDetail"
+        android:name="com.example.whatthedogdoin.ui.diseases.DiseaseDetailsFragment"
+        android:label="Détails de la maladie"
+        tools:layout="@layout/fragment_disease_details">
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+    </fragment>
     <fragment
         android:id="@+id/navigation_clients"
         android:name="com.example.whatthedogdoin.ui.clients.ClientsFragment"

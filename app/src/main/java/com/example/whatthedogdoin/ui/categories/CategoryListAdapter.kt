@@ -23,7 +23,7 @@ class CategoryListAdapter : ListAdapter<Category, CategoryListAdapter.CategoryVi
     }
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameItemView: TextView = itemView.findViewById(R.id.textCategorie)
+        private val nameItemView: TextView = itemView.findViewById(R.id.text_categories)
 
         fun bind(category: Category?) {
             nameItemView.text = category?.noun

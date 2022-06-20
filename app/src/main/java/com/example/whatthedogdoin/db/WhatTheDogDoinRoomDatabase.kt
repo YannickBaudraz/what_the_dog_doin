@@ -8,6 +8,7 @@ import androidx.room.TypeConverters
 import com.example.whatthedogdoin.db.dao.BreedDao
 import com.example.whatthedogdoin.db.entities.*
 import com.example.whatthedogdoin.db.dao.DogDao
+import com.example.whatthedogdoin.db.dao.DiseaseDao
 import com.example.whatthedogdoin.db.dao.ClientDao
 import kotlinx.coroutines.CoroutineScope
 
@@ -18,6 +19,7 @@ abstract class WhatTheDogDoinRoomDatabase : RoomDatabase() {
 
     // DAOs
     abstract fun dogDao(): DogDao
+    abstract fun diseaseDao(): DiseaseDao
     abstract fun clientDao(): ClientDao
     abstract fun breedDao(): BreedDao
 

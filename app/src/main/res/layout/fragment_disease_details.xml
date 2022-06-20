@@ -29,70 +29,63 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.gridlayout.widget.GridLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/gridLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="0dp"
                     android:adjustViewBounds="true"
-                    android:padding="0dp"
-                    app:columnCount="3"
-                    app:flow_horizontalGap="15dp"
-                    app:useDefaultMargins="true">
+                    app:columnCount="5"
+                    app:flow_horizontalGap="5dp"
+                    app:useDefaultMargins="false">
 
-                    <RelativeLayout
+
+                    <ImageButton
+                        android:id="@+id/diseaseGoBack"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        app:layout_column="0"
-                        app:layout_columnWeight="1"
-                        app:layout_row="0">
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:text="Button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TouchTargetSizeCheck" />
 
-                        <ImageButton
-                            android:id="@+id/imageButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:minHeight="48dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/ic_baseline_arrow_back_24"
-                            android:text="Button"
-                            tools:ignore="TouchTargetSizeCheck" />
-                    </RelativeLayout>
 
                     <TextView
                         android:id="@+id/textAddSickness"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Anémie du chien"
+                        android:text="asdasd asdasdasdas"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textSize="24sp"
                         app:layout_column="1"
-                        app:layout_columnWeight="1"
+                        app:layout_columnWeight="0"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/buttonDeleteDisease"
+                        app:layout_constraintStart_toEndOf="@+id/diseaseGoBack"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_row="0" />
 
-                    <RelativeLayout
+
+                    <ImageButton
+                        android:id="@+id/buttonDeleteDisease"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
-                        android:orientation="horizontal"
-                        app:layout_column="2"
-                        app:layout_columnWeight="1"
-                        app:layout_row="0">
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:minHeight="48dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        android:text="Button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-                        <ImageButton
-                            android:id="@+id/imageButton4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:minHeight="48dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/ic_baseline_delete_24"
-                            android:text="Button"
-                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-                    </RelativeLayout>
 
-                </androidx.gridlayout.widget.GridLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/iconDiseases9"
@@ -126,7 +119,7 @@
                         app:layout_constraintVertical_bias="1.0" />
 
                     <TextView
-                        android:id="@+id/iconTick"
+                        android:id="@+id/iconVaccineStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="✔"
@@ -152,7 +145,7 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/iconCross"
+                        android:id="@+id/iconZoonoseStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -224,7 +217,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
-                        android:id="@+id/textCategorie"
+                        android:id="@+id/textDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
