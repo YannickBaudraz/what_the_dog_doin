@@ -9,7 +9,7 @@ data class Breed (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo var id: Int = 0,
     @ColumnInfo val link: String?,
-    @ColumnInfo val noun: String,
+    @ColumnInfo var noun: String,
     @ColumnInfo(name = "id_category") val idCategory: Int?,
     @ColumnInfo var morphotype: String?,
     @ColumnInfo var classification: String?,

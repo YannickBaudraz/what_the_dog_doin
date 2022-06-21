@@ -39,19 +39,23 @@ import com.example.whatthedogdoin.ui.ViewModelFactory
         }
 
         submitButton.setOnClickListener() {
+            val name: EditText = root.findViewById(R.id.name)
             val morphotype: EditText = root.findViewById(R.id.morphotype)
             val classification: EditText = root.findViewById(R.id.classification)
             val lifeExpectancy: EditText = root.findViewById(R.id.lifeExpectancy)
 
+            breedLiveData.value?.noun = name.text.toString()
             breedLiveData.value?.morphotype = morphotype.text.toString()
             breedLiveData.value?.classification = classification.text.toString()
             breedLiveData.value?.lifeExpectancy = lifeExpectancy.text.toString().toInt()
 
             breedLiveData.value?.let { it -> breedViewModel.update(it) }
+
+            goBack()
         }
 
         breedLiveData.observe(viewLifecycleOwner) { breed ->
-            root.findViewById<TextView>(R.id.breedTitle).text = breed.noun
+            root.findViewById<TextView>(R.id.name).text = breed.noun
             root.findViewById<TextView>(R.id.morphotype).text = breed.morphotype
             root.findViewById<TextView>(R.id.classification).text = breed.classification
             root.findViewById<TextView>(R.id.lifeExpectancy).text = breed.lifeExpectancy.toString()
